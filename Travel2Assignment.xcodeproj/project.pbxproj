@@ -24,6 +24,9 @@
 		7B0E2B1D2B4D68AE00E6C038 /* City3CollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B0E2B1B2B4D68AE00E6C038 /* City3CollectionViewCell.swift */; };
 		7B0E2B1E2B4D68AE00E6C038 /* City3CollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7B0E2B1C2B4D68AE00E6C038 /* City3CollectionViewCell.xib */; };
 		7B0E2B202B4D68C600E6C038 /* City3ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B0E2B1F2B4D68C600E6C038 /* City3ViewController.swift */; };
+		7B0E2B232B4D8A8200E6C038 /* City4ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B0E2B222B4D8A8200E6C038 /* City4ViewController.swift */; };
+		7B0E2B262B4D8AA100E6C038 /* City4CollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B0E2B242B4D8AA100E6C038 /* City4CollectionViewCell.swift */; };
+		7B0E2B272B4D8AA100E6C038 /* City4CollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7B0E2B252B4D8AA100E6C038 /* City4CollectionViewCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -45,6 +48,9 @@
 		7B0E2B1B2B4D68AE00E6C038 /* City3CollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = City3CollectionViewCell.swift; sourceTree = "<group>"; };
 		7B0E2B1C2B4D68AE00E6C038 /* City3CollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = City3CollectionViewCell.xib; sourceTree = "<group>"; };
 		7B0E2B1F2B4D68C600E6C038 /* City3ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = City3ViewController.swift; sourceTree = "<group>"; };
+		7B0E2B222B4D8A8200E6C038 /* City4ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = City4ViewController.swift; sourceTree = "<group>"; };
+		7B0E2B242B4D8AA100E6C038 /* City4CollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = City4CollectionViewCell.swift; sourceTree = "<group>"; };
+		7B0E2B252B4D8AA100E6C038 /* City4CollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = City4CollectionViewCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -78,6 +84,7 @@
 		7B0E2AEF2B4D31AB00E6C038 /* Travel2Assignment */ = {
 			isa = PBXGroup;
 			children = (
+				7B0E2B212B4D8A5B00E6C038 /* city4 */,
 				7B0E2B182B4D66F900E6C038 /* Plactice3ColltionAndTable */,
 				7B0E2B112B4D4E3400E6C038 /* Plactice2Collection */,
 				7B0E2B0E2B4D3EA800E6C038 /* Test */,
@@ -129,6 +136,16 @@
 				7B0E2B1F2B4D68C600E6C038 /* City3ViewController.swift */,
 			);
 			path = Plactice3ColltionAndTable;
+			sourceTree = "<group>";
+		};
+		7B0E2B212B4D8A5B00E6C038 /* city4 */ = {
+			isa = PBXGroup;
+			children = (
+				7B0E2B222B4D8A8200E6C038 /* City4ViewController.swift */,
+				7B0E2B242B4D8AA100E6C038 /* City4CollectionViewCell.swift */,
+				7B0E2B252B4D8AA100E6C038 /* City4CollectionViewCell.xib */,
+			);
+			path = city4;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -195,6 +212,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7B0E2B272B4D8AA100E6C038 /* City4CollectionViewCell.xib in Resources */,
 				7B0E2AFD2B4D31AD00E6C038 /* LaunchScreen.storyboard in Resources */,
 				7B0E2B172B4D4E8300E6C038 /* CityInfoAppCollectionViewCell.xib in Resources */,
 				7B0E2AFA2B4D31AD00E6C038 /* Assets.xcassets in Resources */,
@@ -218,6 +236,8 @@
 				7B0E2B0A2B4D37B000E6C038 /* CityInfo.swift in Sources */,
 				7B0E2B132B4D4E6800E6C038 /* CityInfoAppCollectionViewController.swift in Sources */,
 				7B0E2AF32B4D31AB00E6C038 /* SceneDelegate.swift in Sources */,
+				7B0E2B232B4D8A8200E6C038 /* City4ViewController.swift in Sources */,
+				7B0E2B262B4D8AA100E6C038 /* City4CollectionViewCell.swift in Sources */,
 				7B0E2B202B4D68C600E6C038 /* City3ViewController.swift in Sources */,
 				7B0E2B102B4D3EBB00E6C038 /* TestCollectionViewController.swift in Sources */,
 				7B0E2B1D2B4D68AE00E6C038 /* City3CollectionViewCell.swift in Sources */,

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="22505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="pL5-rr-R41">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="22505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="LJl-fx-VSV">
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22504"/>
@@ -292,6 +292,87 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0Ev-7I-A4l" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-312.21374045801525" y="3095.7746478873241"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="gFb-fg-9dH">
+            <objects>
+                <navigationController id="LJl-fx-VSV" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="xWm-Jy-aEL">
+                        <rect key="frame" x="0.0" y="59" width="393" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <textAttributes key="titleTextAttributes">
+                            <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
+                        </textAttributes>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="Kgf-4h-m6Y" kind="relationship" relationship="rootViewController" id="5mV-vp-RXE"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="kkT-kS-mbi" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1162" y="3947"/>
+        </scene>
+        <!--인기 도시-->
+        <scene sceneID="o73-qr-poY">
+            <objects>
+                <viewController id="Kgf-4h-m6Y" customClass="City4ViewController" customModule="Travel2Assignment" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="0He-fu-7BR">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="3bg-3b-DwX">
+                                <rect key="frame" x="16" y="107" width="361" height="32"/>
+                                <segments>
+                                    <segment title="모두"/>
+                                    <segment title="국내"/>
+                                    <segment title="해외"/>
+                                </segments>
+                                <connections>
+                                    <action selector="segmentChangedValue:" destination="Kgf-4h-m6Y" eventType="valueChanged" id="YGS-V5-3hn"/>
+                                </connections>
+                            </segmentedControl>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="T3t-HH-dNw">
+                                <rect key="frame" x="0.0" y="138" width="393" height="680"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="8SR-eG-bbl">
+                                    <size key="itemSize" width="128" height="128"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="City4CollectionViewCell" id="gpP-gU-LoF" customClass="City4CollectionViewCell" customModule="Travel2Assignment" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="0.0" width="127.99999999999997" height="128"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="Jn9-nB-hLo">
+                                            <rect key="frame" x="0.0" y="0.0" width="127.99999999999997" height="128"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </collectionViewCellContentView>
+                                    </collectionViewCell>
+                                </cells>
+                            </collectionView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="vhD-KY-rmR"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="3bg-3b-DwX" firstAttribute="leading" secondItem="vhD-KY-rmR" secondAttribute="leading" constant="16" id="AwM-gt-Djk"/>
+                            <constraint firstItem="T3t-HH-dNw" firstAttribute="top" secondItem="3bg-3b-DwX" secondAttribute="bottom" id="Bh0-9i-hYv"/>
+                            <constraint firstItem="vhD-KY-rmR" firstAttribute="trailing" secondItem="3bg-3b-DwX" secondAttribute="trailing" constant="16" id="IP5-Id-aQL"/>
+                            <constraint firstItem="vhD-KY-rmR" firstAttribute="bottom" secondItem="T3t-HH-dNw" secondAttribute="bottom" id="Kca-sb-eDf"/>
+                            <constraint firstItem="T3t-HH-dNw" firstAttribute="leading" secondItem="vhD-KY-rmR" secondAttribute="leading" id="KsW-PI-oPD"/>
+                            <constraint firstItem="3bg-3b-DwX" firstAttribute="top" secondItem="vhD-KY-rmR" secondAttribute="top" constant="4" id="LdI-2X-pSV"/>
+                            <constraint firstItem="vhD-KY-rmR" firstAttribute="trailing" secondItem="T3t-HH-dNw" secondAttribute="trailing" id="qMP-JF-oap"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="인기 도시" id="aBj-EA-xwG"/>
+                    <connections>
+                        <outlet property="cityCollectionView" destination="T3t-HH-dNw" id="WfN-0R-UbP"/>
+                        <outlet property="segmenteCity" destination="3bg-3b-DwX" id="ljn-sB-hfc"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Ouo-uU-6qK" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-262" y="3946"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="3AD-po-pYI">

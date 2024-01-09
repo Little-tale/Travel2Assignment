@@ -18,6 +18,7 @@ let xib = UINib(nibName: "CityInfoAppCollectionViewCell", bundle: nil)
 // 1.0 -> 진짜 이것 때문에 울었다....
     // xib를 가져왔으면 UICollectionViewDataSource와 UICollectionViewDelegate 프로토콜을 구현해 주어야 한다.
 // 아까는 fix 나와서 자동으로 생성해 주었는데 즨장 안나온다.
+// UIView 같이 다른곳에서나 연결 해야지 멍청한놈아
 class CityInfoAppCollectionViewController: UICollectionViewController{
 
     override func viewDidLoad() {
