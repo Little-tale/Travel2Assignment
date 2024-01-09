@@ -6,83 +6,95 @@
 //
 
 import UIKit
+import Kingfisher
+// 연습을 위해 시티 인포 인스턴스를 생성한다.
+let cityInfo = CityInfo()
 
-private let reuseIdentifier = "Cell"
+// private let reuseIdentifier = "Cell"
+private let reuseIdentifier = "TravelCollectionViewCell"
 
 class TravelCollectionViewController: UICollectionViewController {
+
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
-        // Register cell classes
-        self.collectionView!.register(UICollectionViewCell.self, forCellWithReuseIdentifier: reuseIdentifier)
-
-        // Do any additional setup after loading the view.
+       // 컬렉션뷰는 레지스터 과정이 필요해 보인다.
+       // self.collectionView!.register(UICollectionViewCell.self, forCellWithReuseIdentifier: reuseIdentifier)
+        
+        // 이때 위에 있는 코드를 통해 할경우 문제가 발생한다.
+        
+        // XIB 없을땐 하지마세요
+        
+        // self.collectionView!.register(TravelCollectionViewCell.self, forCellWithReuseIdentifier: reuseIdentifier)
+        
+        // 컬렉션뷰는 레이아웃을 잡아줘야 할것 같다.
+        // 이건 쉽게 하는거라고 한다...
+        let layout = UICollectionViewFlowLayout()
+        
+        // 셀(아이템) 사이즈
+        layout.itemSize = CGSize(width: 150, height: 250)
+        // 셀 상하좌우 여백
+        layout.sectionInset = UIEdgeInsets(top: 10, left: 28, bottom: 10, right: 28)
+        // 수평으로 할건지 수직으로 할건지
+        layout.scrollDirection = .vertical
+        
+        // 레이아웃을 짜주었으면 레이아웃을 넣어줘야 한다.
+        collectionView.collectionViewLayout = layout
+        
+        // 시티 정보 테스트
+        print(cityInfo)
+        print(cityInfo.city)
+        // print(cityInfo.city.first)
     }
 
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using [segue destinationViewController].
-        // Pass the selected object to the new view controller.
-    }
-    */
-
-    // MARK: UICollectionViewDataSource
-
-    override func numberOfSections(in collectionView: UICollectionView) -> Int {
-        // #warning Incomplete implementation, return the number of sections
-        return 0
-    }
-
-
+ 
+    // 섹션은 몇개?
+   
+    // 셀은 몇개?
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of items
-        return 0
+        print(cityInfo.city.count) // 15
+        return cityInfo.city.count
     }
-
+    // 셀 디자인?
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath)
+        // TravelCollectionViewController
+        // TravelCollectionViewCell
+        print(type(of: TravelCollectionViewCell.self))
+        
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath) as! TravelCollectionViewCell
     
-        // Configure the cell
-    
+        // 테스트를 위해 파랑으로 일단 해놓는다
+        // cell.backgroundColor = .green
+        
+        // 셀 이미지를 넣어본다. KingFisher 를 이용해 보겠어
+        let url = URL(string: cityInfo.city[indexPath.item].city_image)
+        // print(cell.imageView)
+        cell.imageView.kf.setImage(with: url)
+        //cell.imageView.clipsToBounds = true
+        cell.imageView.contentMode = .scaleAspectFill
+        cell.imageView.layer.cornerRadius = 70
+        
+        cell.mainLabel.textAlignment = .center
+        cell.subLabel.textAlignment = .center
+        
+        let text = cityInfo.city[indexPath.item].city_name + " | " + cityInfo.city[indexPath.item].city_english_name
+        
+        cell.mainLabel.text = text
+        cell.subLabel.text = cityInfo.city[indexPath.item].city_explain
+        
+        cell.mainLabel.font = UIFont.systemFont(ofSize: 16, weight: .heavy)
+        cell.subLabel.font = .systemFont(ofSize: 12)
+        
+        cell.subLabel.textColor = .gray
+        
+        cell.subLabel.numberOfLines = 2
         return cell
     }
-
-    // MARK: UICollectionViewDelegate
-
-    /*
-    // Uncomment this method to specify if the specified item should be highlighted during tracking
-    override func collectionView(_ collectionView: UICollectionView, shouldHighlightItemAt indexPath: IndexPath) -> Bool {
-        return true
-    }
-    */
-
-    /*
-    // Uncomment this method to specify if the specified item should be selected
-    override func collectionView(_ collectionView: UICollectionView, shouldSelectItemAt indexPath: IndexPath) -> Bool {
-        return true
-    }
-    */
-
-    /*
-    // Uncomment these methods to specify if an action menu should be displayed for the specified item, and react to actions performed on the item
-    override func collectionView(_ collectionView: UICollectionView, shouldShowMenuForItemAt indexPath: IndexPath) -> Bool {
-        return false
-    }
-
-    override func collectionView(_ collectionView: UICollectionView, canPerformAction action: Selector, forItemAt indexPath: IndexPath, withSender sender: Any?) -> Bool {
-        return false
-    }
-
-    override func collectionView(_ collectionView: UICollectionView, performAction action: Selector, forItemAt indexPath: IndexPath, withSender sender: Any?) {
+    // 셀 높이?
     
-    }
-    */
+    
+    // 레이아웃으로 해결해야함
+
 
 }

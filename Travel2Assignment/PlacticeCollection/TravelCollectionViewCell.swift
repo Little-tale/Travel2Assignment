@@ -8,5 +8,13 @@
 import UIKit
 
 class TravelCollectionViewCell: UICollectionViewCell {
+    @IBOutlet var imageView: UIImageView!
+    @IBOutlet var mainLabel: UILabel!
+    @IBOutlet var subLabel: UILabel!
     
+    // 알아봐
+    override func awakeFromNib() {
+        super.awakeFromNib()
+        print(#function)
+    }
 }
