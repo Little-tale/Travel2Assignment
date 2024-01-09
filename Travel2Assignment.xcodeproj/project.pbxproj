@@ -21,6 +21,9 @@
 		7B0E2B132B4D4E6800E6C038 /* CityInfoAppCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B0E2B122B4D4E6800E6C038 /* CityInfoAppCollectionViewController.swift */; };
 		7B0E2B162B4D4E8300E6C038 /* CityInfoAppCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B0E2B142B4D4E8300E6C038 /* CityInfoAppCollectionViewCell.swift */; };
 		7B0E2B172B4D4E8300E6C038 /* CityInfoAppCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7B0E2B152B4D4E8300E6C038 /* CityInfoAppCollectionViewCell.xib */; };
+		7B0E2B1D2B4D68AE00E6C038 /* City3CollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B0E2B1B2B4D68AE00E6C038 /* City3CollectionViewCell.swift */; };
+		7B0E2B1E2B4D68AE00E6C038 /* City3CollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7B0E2B1C2B4D68AE00E6C038 /* City3CollectionViewCell.xib */; };
+		7B0E2B202B4D68C600E6C038 /* City3ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B0E2B1F2B4D68C600E6C038 /* City3ViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -39,6 +42,9 @@
 		7B0E2B122B4D4E6800E6C038 /* CityInfoAppCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CityInfoAppCollectionViewController.swift; sourceTree = "<group>"; };
 		7B0E2B142B4D4E8300E6C038 /* CityInfoAppCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CityInfoAppCollectionViewCell.swift; sourceTree = "<group>"; };
 		7B0E2B152B4D4E8300E6C038 /* CityInfoAppCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CityInfoAppCollectionViewCell.xib; sourceTree = "<group>"; };
+		7B0E2B1B2B4D68AE00E6C038 /* City3CollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = City3CollectionViewCell.swift; sourceTree = "<group>"; };
+		7B0E2B1C2B4D68AE00E6C038 /* City3CollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = City3CollectionViewCell.xib; sourceTree = "<group>"; };
+		7B0E2B1F2B4D68C600E6C038 /* City3ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = City3ViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -72,6 +78,7 @@
 		7B0E2AEF2B4D31AB00E6C038 /* Travel2Assignment */ = {
 			isa = PBXGroup;
 			children = (
+				7B0E2B182B4D66F900E6C038 /* Plactice3ColltionAndTable */,
 				7B0E2B112B4D4E3400E6C038 /* Plactice2Collection */,
 				7B0E2B0E2B4D3EA800E6C038 /* Test */,
 				7B0E2B092B4D37B000E6C038 /* CityInfo.swift */,
@@ -112,6 +119,16 @@
 				7B0E2B152B4D4E8300E6C038 /* CityInfoAppCollectionViewCell.xib */,
 			);
 			path = Plactice2Collection;
+			sourceTree = "<group>";
+		};
+		7B0E2B182B4D66F900E6C038 /* Plactice3ColltionAndTable */ = {
+			isa = PBXGroup;
+			children = (
+				7B0E2B1B2B4D68AE00E6C038 /* City3CollectionViewCell.swift */,
+				7B0E2B1C2B4D68AE00E6C038 /* City3CollectionViewCell.xib */,
+				7B0E2B1F2B4D68C600E6C038 /* City3ViewController.swift */,
+			);
+			path = Plactice3ColltionAndTable;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -182,6 +199,7 @@
 				7B0E2B172B4D4E8300E6C038 /* CityInfoAppCollectionViewCell.xib in Resources */,
 				7B0E2AFA2B4D31AD00E6C038 /* Assets.xcassets in Resources */,
 				7B0E2AF82B4D31AB00E6C038 /* Main.storyboard in Resources */,
+				7B0E2B1E2B4D68AE00E6C038 /* City3CollectionViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -200,7 +218,9 @@
 				7B0E2B0A2B4D37B000E6C038 /* CityInfo.swift in Sources */,
 				7B0E2B132B4D4E6800E6C038 /* CityInfoAppCollectionViewController.swift in Sources */,
 				7B0E2AF32B4D31AB00E6C038 /* SceneDelegate.swift in Sources */,
+				7B0E2B202B4D68C600E6C038 /* City3ViewController.swift in Sources */,
 				7B0E2B102B4D3EBB00E6C038 /* TestCollectionViewController.swift in Sources */,
+				7B0E2B1D2B4D68AE00E6C038 /* City3CollectionViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
