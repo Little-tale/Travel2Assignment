@@ -3,7 +3,6 @@ import Kingfisher
 
 private let identy = CityCollectionIdentifier.City.rawValue
 let cityList = CityInfo()
-var imageSize = 0.0
 
 // 아이덴티를 달라는건 아님
 // 정확히는 xib 파일 이름입니다.
@@ -55,6 +54,7 @@ class City4ViewController: UIViewController {
             default : break
             }
         }
+        
         filterList.removeAll()
         filterList = filteringList
         print(filteringList)
@@ -89,10 +89,7 @@ extension City4ViewController: UICollectionViewDataSource {
             
             cell.subLabel.text = city[indexPath.item].city_explain
             
-            imageSize = cell.frame.size.width
-            cell.mainImageView.layer.cornerRadius = imageSize / 2
-            
-            print("셀 이미지 뷰 윋스 : ", cell.mainImageView.frame.size.width)
+            // print("셀 이미지 뷰 윋스 : ", cell.mainImageView.frame.size.width)
             return cell
     }
 }
@@ -113,7 +110,7 @@ extension City4ViewController: CityCollectionDesign {
         layout.scrollDirection = .vertical
         
         cityCollectionView.collectionViewLayout = layout
-        print("컬렉션 뷰 윋스 : ", cityCollectionView.frame.size.width)
+        // print("컬렉션 뷰 윋스 : ", cityCollectionView.frame.size.width)
         
     }
 }

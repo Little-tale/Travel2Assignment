@@ -35,6 +35,30 @@ struct CityCellLayout {
     }
 }
 
+
+struct ImageViewConerRadius {
+    // 안보이게 되려나?
+    private var imageWidth: Double
+    
+    // var conerRadius: CGFloat
+    
+    // 이렇게 하면 읽기 전용으로만 가능하다고 한다.
+    var conerRadius:CGFloat {
+        return imageWidth / 2
+    }
+    
+    init(uiImageView : UIImageView){
+        imageWidth = uiImageView.frame.size.width
+    }
+}
+
 protocol CityCollectionDesign {
     func designCityLayout( collectioView: UICollectionView)
+}
+
+protocol CityCollectionCellDesign {
+    func designMainImage()
+    func designMainLabel()
+    func designSubLabel()
+    func designImageConerRadius(imagelayer: ImageViewConerRadius)
 }

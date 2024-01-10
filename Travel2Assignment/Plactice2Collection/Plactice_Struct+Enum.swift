@@ -14,6 +14,7 @@ enum CellofIdentifier: String {
 /*
  layout.minimumLineSpacing = 16
  */
+
 struct CityCollectionViewLayout {
     let screenSize: CGFloat
     let itemSize: CGSize

@@ -39,6 +39,9 @@ class CityInfoAppCollectionViewCell: UICollectionViewCell {
     
     func designImageView(){
         infoImageView.contentMode = .scaleAspectFill
+        
+        let width = infoImageView.frame.size.width
+        print(width)
         infoImageView.layer.cornerRadius = 70
        
     }
