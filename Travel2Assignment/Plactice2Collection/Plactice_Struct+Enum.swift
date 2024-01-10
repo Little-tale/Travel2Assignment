@@ -37,5 +37,7 @@ struct CityCollectionViewLayout {
         self.minLineSpacing = 16
     }
     
+    
+    
 }
 

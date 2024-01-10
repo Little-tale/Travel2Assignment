@@ -29,6 +29,7 @@
 		7B0E2B272B4D8AA100E6C038 /* City4CollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7B0E2B252B4D8AA100E6C038 /* City4CollectionViewCell.xib */; };
 		7B0E2B462B4E85FC00E6C038 /* PlacticeStruct.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B0E2B452B4E85FC00E6C038 /* PlacticeStruct.swift */; };
 		7B0E2B482B4EA2C900E6C038 /* Plactice_Struct+Enum.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B0E2B472B4EA2C900E6C038 /* Plactice_Struct+Enum.swift */; };
+		7B0E2B4A2B4EB6B000E6C038 /* Protocol+Extention+Enum+Struct.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B0E2B492B4EB6B000E6C038 /* Protocol+Extention+Enum+Struct.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -55,6 +56,7 @@
 		7B0E2B252B4D8AA100E6C038 /* City4CollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = City4CollectionViewCell.xib; sourceTree = "<group>"; };
 		7B0E2B452B4E85FC00E6C038 /* PlacticeStruct.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlacticeStruct.swift; sourceTree = "<group>"; };
 		7B0E2B472B4EA2C900E6C038 /* Plactice_Struct+Enum.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Plactice_Struct+Enum.swift"; sourceTree = "<group>"; };
+		7B0E2B492B4EB6B000E6C038 /* Protocol+Extention+Enum+Struct.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Protocol+Extention+Enum+Struct.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -157,6 +159,8 @@
 				7B0E2B3D2B4E843B00E6C038 /* View */,
 				7B0E2B3C2B4E842E00E6C038 /* Model */,
 				7B0E2B242B4D8AA100E6C038 /* City4CollectionViewCell.swift */,
+				7B0E2B222B4D8A8200E6C038 /* City4ViewController.swift */,
+				7B0E2B492B4EB6B000E6C038 /* Protocol+Extention+Enum+Struct.swift */,
 				7B0E2B252B4D8AA100E6C038 /* City4CollectionViewCell.xib */,
 			);
 			path = city4;
@@ -179,7 +183,6 @@
 		7B0E2B3E2B4E844800E6C038 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				7B0E2B222B4D8A8200E6C038 /* City4ViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -316,6 +319,7 @@
 				7B0E2B462B4E85FC00E6C038 /* PlacticeStruct.swift in Sources */,
 				7B0E2B132B4D4E6800E6C038 /* CityInfoAppCollectionViewController.swift in Sources */,
 				7B0E2AF32B4D31AB00E6C038 /* SceneDelegate.swift in Sources */,
+				7B0E2B4A2B4EB6B000E6C038 /* Protocol+Extention+Enum+Struct.swift in Sources */,
 				7B0E2B232B4D8A8200E6C038 /* City4ViewController.swift in Sources */,
 				7B0E2B262B4D8AA100E6C038 /* City4CollectionViewCell.swift in Sources */,
 				7B0E2B202B4D68C600E6C038 /* City3ViewController.swift in Sources */,
