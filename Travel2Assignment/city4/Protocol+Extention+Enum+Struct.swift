@@ -8,6 +8,11 @@ import UIKit
 enum CityCollectionIdentifier: String {
     case City = "City4CollectionViewCell"
 }
+enum citySegment: Int{
+    case every = 0
+    case korea = 1
+    case foreigner = 2
+}
 
 struct CityCellLayout {
     // 고정적인거 넣어야 겠어

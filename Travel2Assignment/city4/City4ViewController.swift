@@ -3,10 +3,12 @@ import Kingfisher
 
 private let identy = CityCollectionIdentifier.City.rawValue
 let cityList = CityInfo()
+//  let segment = citySegment.
 
 // 아이덴티를 달라는건 아님
 // 정확히는 xib 파일 이름입니다.
 let xibCity4 = UINib(nibName: identy, bundle: nil)
+
 
 
 class City4ViewController: UIViewController {
@@ -31,7 +33,7 @@ class City4ViewController: UIViewController {
  
         // 앱 화면 띄울때 전체 넣어놈
         filterList = cityList.city
-        print(filterList)
+        // print(filterList)
         
         
     }
@@ -40,19 +42,19 @@ class City4ViewController: UIViewController {
 
         print(sender.selectedSegmentIndex)
         
+        let segment = citySegment(rawValue: sender.selectedSegmentIndex) // ! 붙이면 none 없어짐
+        
         var filteringList: [City] = []
         
         for item in cityList.city {
-            switch sender.selectedSegmentIndex {
-            case 0 : filteringList.append(item)
-            case 1 : if item.domestic_travel == true {
-                filteringList.append(item)
-                }
-            case 2 : if item.domestic_travel == false {
-                filteringList.append(item)
-                }
-            default : break
+            switch segment {
+            case .every: filteringList.append(item)
+            case .korea: if item.domestic_travel {filteringList.append(item)}
+            case .foreigner : if !item.domestic_travel {filteringList.append(item)}
+            case .none:// 이거 citySegment 가 Optional 이라 그럼
+                return
             }
+            
         }
         
         filterList.removeAll()
@@ -89,7 +91,6 @@ extension City4ViewController: UICollectionViewDataSource {
             
             cell.subLabel.text = city[indexPath.item].city_explain
             
-            // print("셀 이미지 뷰 윋스 : ", cell.mainImageView.frame.size.width)
             return cell
     }
 }
@@ -110,7 +111,6 @@ extension City4ViewController: CityCollectionDesign {
         layout.scrollDirection = .vertical
         
         cityCollectionView.collectionViewLayout = layout
-        // print("컬렉션 뷰 윋스 : ", cityCollectionView.frame.size.width)
         
     }
 }
