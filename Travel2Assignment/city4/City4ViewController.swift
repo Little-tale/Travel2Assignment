@@ -26,6 +26,7 @@ import Kingfisher
 
 private let identy = "City4CollectionViewCell"
 let cityList = CityInfo()
+var imageSize = 0.0
 
 // 아이덴티를 달라는건 아님
 // 정확히는 xib 파일 이름입니다.
@@ -73,8 +74,13 @@ class City4ViewController: UIViewController, UICollectionViewDelegate, UICollect
 //        if indexPath.item == 1 {
 //            cell.isHidden = true
 //        }
+        imageSize = cell.frame.size.width
+
+        cell.mainImageView.layer.cornerRadius = imageSize / 2
         
+        //print("셀 사이즈 윋스 : ", cell.frame.size.width)
         
+        print("셀 이미지 뷰 윋스 : ", cell.mainImageView.frame.size.width)
         return cell
     }
     
@@ -99,6 +105,8 @@ class City4ViewController: UIViewController, UICollectionViewDelegate, UICollect
         filterList = cityList.city
         print(filterList)
         
+        print("아이템 사이즈 : ", layout.itemSize.width)
+        
     }
     
     func designItemCell(CollectionLayOut: UICollectionViewFlowLayout) {
@@ -120,8 +128,9 @@ class City4ViewController: UIViewController, UICollectionViewDelegate, UICollect
         CollectionLayOut.itemSize = CGSize(width: cellWidth, height: cellHeight)
         CollectionLayOut.sectionInset = UIEdgeInsets(top: horSpacing, left: virticalSpacing, bottom: horSpacing, right: virticalSpacing)
        
-
+        
         cityCollectionView.collectionViewLayout = CollectionLayOut
+        print("컬렉션 뷰 윋스 : ", cityCollectionView.frame.size.width)
     }
     @IBAction func segmentChangedValue(_ sender: UISegmentedControl) {
 //        print(segmenteCity)
