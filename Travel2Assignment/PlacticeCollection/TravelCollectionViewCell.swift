@@ -15,6 +15,6 @@ class TravelCollectionViewCell: UICollectionViewCell {
     // 알아봐
     override func awakeFromNib() {
         super.awakeFromNib()
-        print(#function)
+        // print(#function)
     }
 }

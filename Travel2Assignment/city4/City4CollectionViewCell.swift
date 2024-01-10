@@ -29,7 +29,7 @@ class City4CollectionViewCell: UICollectionViewCell {
         print("이미지 높이 : ", mainImageView.frame.size.height)
         print("이미지 넓이 : ", mainImageView.frame.size.width)
         mainImageView.backgroundColor = .lightGray
-        let squareNum = mainImageView.frame.size.width / 2 / 1.4
+        //let squareNum = mainImageView.frame.size.width / 2 / 1.4
         // 213이 어떻게 나오지
         // let screenSize = UIScreen.main.bounds.width
         // print(screenSize)

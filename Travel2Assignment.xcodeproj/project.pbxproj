@@ -27,6 +27,8 @@
 		7B0E2B232B4D8A8200E6C038 /* City4ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B0E2B222B4D8A8200E6C038 /* City4ViewController.swift */; };
 		7B0E2B262B4D8AA100E6C038 /* City4CollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B0E2B242B4D8AA100E6C038 /* City4CollectionViewCell.swift */; };
 		7B0E2B272B4D8AA100E6C038 /* City4CollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7B0E2B252B4D8AA100E6C038 /* City4CollectionViewCell.xib */; };
+		7B0E2B462B4E85FC00E6C038 /* PlacticeStruct.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B0E2B452B4E85FC00E6C038 /* PlacticeStruct.swift */; };
+		7B0E2B482B4EA2C900E6C038 /* Plactice_Struct+Enum.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B0E2B472B4EA2C900E6C038 /* Plactice_Struct+Enum.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -51,6 +53,8 @@
 		7B0E2B222B4D8A8200E6C038 /* City4ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = City4ViewController.swift; sourceTree = "<group>"; };
 		7B0E2B242B4D8AA100E6C038 /* City4CollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = City4CollectionViewCell.swift; sourceTree = "<group>"; };
 		7B0E2B252B4D8AA100E6C038 /* City4CollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = City4CollectionViewCell.xib; sourceTree = "<group>"; };
+		7B0E2B452B4E85FC00E6C038 /* PlacticeStruct.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlacticeStruct.swift; sourceTree = "<group>"; };
+		7B0E2B472B4EA2C900E6C038 /* Plactice_Struct+Enum.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Plactice_Struct+Enum.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -106,6 +110,7 @@
 			children = (
 				7B0E2B052B4D33CE00E6C038 /* TravelCollectionViewController.swift */,
 				7B0E2B072B4D33DF00E6C038 /* TravelCollectionViewCell.swift */,
+				7B0E2B452B4E85FC00E6C038 /* PlacticeStruct.swift */,
 			);
 			path = PlacticeCollection;
 			sourceTree = "<group>";
@@ -121,9 +126,13 @@
 		7B0E2B112B4D4E3400E6C038 /* Plactice2Collection */ = {
 			isa = PBXGroup;
 			children = (
+				7B0E2B442B4E849400E6C038 /* Controller */,
+				7B0E2B432B4E848A00E6C038 /* View */,
+				7B0E2B422B4E848100E6C038 /* Model */,
 				7B0E2B122B4D4E6800E6C038 /* CityInfoAppCollectionViewController.swift */,
 				7B0E2B142B4D4E8300E6C038 /* CityInfoAppCollectionViewCell.swift */,
 				7B0E2B152B4D4E8300E6C038 /* CityInfoAppCollectionViewCell.xib */,
+				7B0E2B472B4EA2C900E6C038 /* Plactice_Struct+Enum.swift */,
 			);
 			path = Plactice2Collection;
 			sourceTree = "<group>";
@@ -131,6 +140,9 @@
 		7B0E2B182B4D66F900E6C038 /* Plactice3ColltionAndTable */ = {
 			isa = PBXGroup;
 			children = (
+				7B0E2B412B4E846F00E6C038 /* Controller */,
+				7B0E2B402B4E846700E6C038 /* View */,
+				7B0E2B3F2B4E846000E6C038 /* Model */,
 				7B0E2B1B2B4D68AE00E6C038 /* City3CollectionViewCell.swift */,
 				7B0E2B1C2B4D68AE00E6C038 /* City3CollectionViewCell.xib */,
 				7B0E2B1F2B4D68C600E6C038 /* City3ViewController.swift */,
@@ -141,11 +153,77 @@
 		7B0E2B212B4D8A5B00E6C038 /* city4 */ = {
 			isa = PBXGroup;
 			children = (
-				7B0E2B222B4D8A8200E6C038 /* City4ViewController.swift */,
+				7B0E2B3E2B4E844800E6C038 /* Controller */,
+				7B0E2B3D2B4E843B00E6C038 /* View */,
+				7B0E2B3C2B4E842E00E6C038 /* Model */,
 				7B0E2B242B4D8AA100E6C038 /* City4CollectionViewCell.swift */,
 				7B0E2B252B4D8AA100E6C038 /* City4CollectionViewCell.xib */,
 			);
 			path = city4;
+			sourceTree = "<group>";
+		};
+		7B0E2B3C2B4E842E00E6C038 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		7B0E2B3D2B4E843B00E6C038 /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		7B0E2B3E2B4E844800E6C038 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				7B0E2B222B4D8A8200E6C038 /* City4ViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		7B0E2B3F2B4E846000E6C038 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		7B0E2B402B4E846700E6C038 /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		7B0E2B412B4E846F00E6C038 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		7B0E2B422B4E848100E6C038 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		7B0E2B432B4E848A00E6C038 /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		7B0E2B442B4E849400E6C038 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Controller;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -231,9 +309,11 @@
 				7B0E2B062B4D33CE00E6C038 /* TravelCollectionViewController.swift in Sources */,
 				7B0E2B162B4D4E8300E6C038 /* CityInfoAppCollectionViewCell.swift in Sources */,
 				7B0E2AF52B4D31AB00E6C038 /* ViewController.swift in Sources */,
+				7B0E2B482B4EA2C900E6C038 /* Plactice_Struct+Enum.swift in Sources */,
 				7B0E2B082B4D33DF00E6C038 /* TravelCollectionViewCell.swift in Sources */,
 				7B0E2AF12B4D31AB00E6C038 /* AppDelegate.swift in Sources */,
 				7B0E2B0A2B4D37B000E6C038 /* CityInfo.swift in Sources */,
+				7B0E2B462B4E85FC00E6C038 /* PlacticeStruct.swift in Sources */,
 				7B0E2B132B4D4E6800E6C038 /* CityInfoAppCollectionViewController.swift in Sources */,
 				7B0E2AF32B4D31AB00E6C038 /* SceneDelegate.swift in Sources */,
 				7B0E2B232B4D8A8200E6C038 /* City4ViewController.swift in Sources */,

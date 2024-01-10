@@ -9,58 +9,63 @@ import UIKit
 import Kingfisher
 // 연습을 위해 시티 인포 인스턴스를 생성한다.
 let cityInfo = CityInfo()
+// 구조체를 만들어서 셀 사이즈 해볼꺼임
+
 
 // private let reuseIdentifier = "Cell"
 private let reuseIdentifier = "TravelCollectionViewCell"
 
 class TravelCollectionViewController: UICollectionViewController {
+    
+    func layoutFor(layOut: UICollectionViewFlowLayout) -> UICollectionViewFlowLayout {
+        let screenWidth = UIScreen.main.bounds.width
+        let cellSizeFor = CellSizeForCity(screenWidth: screenWidth)
+        
+        // 셀 너비 계산 (화면 너비의 절반에서 좌우 중간 여백을 뺌 )
+        let cellWidth = (screenWidth - (cellSizeFor.right * 3)) / 2
+        let cellHeight = cellSizeFor.height
+
+        print(cellWidth)
+        
+        layOut.itemSize = CGSize(width: cellWidth, height: cellHeight)
+
+        // 섹션의 상하좌우 여백 설정
+        layOut.sectionInset = UIEdgeInsets(top: cellSizeFor.top, left: cellSizeFor.left, bottom: cellSizeFor.bottom, right: cellSizeFor.right)
+        
+        // 셀 간  최소 수평 간격
+        layOut.minimumInteritemSpacing = cellSizeFor.horSpacing
+        // 셀 간 최소 수직 간격
+        layOut.minimumLineSpacing = cellSizeFor.virticalSpacing
+
+        // 스크롤 방향 설정 수직으로
+        layOut.scrollDirection = .vertical
+        
+        return layOut
+    }
+    
 
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
-       // 컬렉션뷰는 레지스터 과정이 필요해 보인다.
-       // self.collectionView!.register(UICollectionViewCell.self, forCellWithReuseIdentifier: reuseIdentifier)
-        
-        // 이때 위에 있는 코드를 통해 할경우 문제가 발생한다.
-        
-        // XIB 없을땐 하지마세요
-        
-        // self.collectionView!.register(TravelCollectionViewCell.self, forCellWithReuseIdentifier: reuseIdentifier)
-        
-        // 컬렉션뷰는 레이아웃을 잡아줘야 할것 같다.
-        // 이건 쉽게 하는거라고 한다...
+        // 컬렉션뷰 아이템 레이아웃 잡기
         let layout = UICollectionViewFlowLayout()
         
-        // 셀(아이템) 사이즈
-        layout.itemSize = CGSize(width: 150, height: 250)
-        // 셀 상하좌우 여백
-        layout.sectionInset = UIEdgeInsets(top: 10, left: 28, bottom: 10, right: 28)
-        // 수평으로 할건지 수직으로 할건지
-        layout.scrollDirection = .vertical
-        
-        // 레이아웃을 짜주었으면 레이아웃을 넣어줘야 한다.
-        collectionView.collectionViewLayout = layout
-        
-        // 시티 정보 테스트
-        print(cityInfo)
-        print(cityInfo.city)
-        // print(cityInfo.city.first)
+        collectionView.collectionViewLayout = layoutFor(layOut: layout)
     }
+    
 
  
     // 섹션은 몇개?
    
     // 셀은 몇개?
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        print(cityInfo.city.count) // 15
+        // print(cityInfo.city.count) // 15
         return cityInfo.city.count
     }
     // 셀 디자인?
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         // TravelCollectionViewController
         // TravelCollectionViewCell
-        print(type(of: TravelCollectionViewCell.self))
         
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath) as! TravelCollectionViewCell
     
@@ -91,10 +96,14 @@ class TravelCollectionViewController: UICollectionViewController {
         cell.subLabel.numberOfLines = 2
         return cell
     }
-    // 셀 높이?
-    
-    
-    // 레이아웃으로 해결해야함
-
 
 }
+
+
+
+
+
+
+
+
+
