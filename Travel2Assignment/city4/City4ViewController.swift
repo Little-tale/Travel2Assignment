@@ -18,7 +18,6 @@ class City4ViewController: UIViewController {
     var filterList: [City] = []
     
     // 콜렉션 뷰 컨의 필수? -> 레이아웃.
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         // 레지스터 등록
@@ -28,44 +27,16 @@ class City4ViewController: UIViewController {
         cityCollectionView.dataSource = self
         cityCollectionView.delegate = self
         
-        // 콜렉션 뷰 레이어 쉽게 해주는 친구
-        let layout = UICollectionViewFlowLayout()
-        layout.scrollDirection = .vertical
-        
-        // 아이템 셀 함수화
-        designItemCell(CollectionLayOut: layout)
+        // 아오 이건 다지인 구조체를 이용한 프로토콜 구현
+        designCityLayout(collectioView: cityCollectionView)
  
         // 앱 화면 띄울때 전체 넣어놈
         filterList = cityList.city
         print(filterList)
         
-        print("아이템 사이즈 : ", layout.itemSize.width)
         
     }
     
-    func designItemCell(CollectionLayOut: UICollectionViewFlowLayout) {
-        // 스크린 넓이 얻고
-        let screenWidth = UIScreen.main.bounds.width
-        let virticalSpacing: CGFloat = 24
-        let contentCount: CGFloat = 2
-        
-        // 최소한의 간격 (아이템간)
-        CollectionLayOut.minimumLineSpacing = 8
-        
-        // 콘텐츠가 2개 라면 좌 중 우 총 3개의 여백이 생긴다. 즉
-        let totalSpaing = virticalSpacing * (contentCount + 1)
-        // 아이탬의 넓이는 화면에서 전체 여백을 빼고 컨텐트 개수만큼 나누면 나온다
-        let cellWidth = (screenWidth -  totalSpaing) / contentCount
-        
-        let cellHeight:CGFloat = 260
-        let horSpacing:CGFloat = 16
-        CollectionLayOut.itemSize = CGSize(width: cellWidth, height: cellHeight)
-        CollectionLayOut.sectionInset = UIEdgeInsets(top: horSpacing, left: virticalSpacing, bottom: horSpacing, right: virticalSpacing)
-       
-        
-        cityCollectionView.collectionViewLayout = CollectionLayOut
-        print("컬렉션 뷰 윋스 : ", cityCollectionView.frame.size.width)
-    }
     @IBAction func segmentChangedValue(_ sender: UISegmentedControl) {
 
         print(sender.selectedSegmentIndex)
@@ -128,4 +99,21 @@ extension City4ViewController: UICollectionViewDataSource {
 
 extension City4ViewController: UICollectionViewDelegate {
     // 이놈은 하는게 뭐였을까
+}
+
+extension City4ViewController: CityCollectionDesign {
+    
+    func designCityLayout(collectioView: UICollectionView) {
+        let layout = UICollectionViewFlowLayout()
+        let screenWidth = UIScreen.main.bounds.width
+        let structLayout = CityCellLayout(screenWidth: screenWidth)
+        
+        layout.itemSize = structLayout.itemSize
+        layout.sectionInset = structLayout.sectionInset
+        layout.scrollDirection = .vertical
+        
+        cityCollectionView.collectionViewLayout = layout
+        print("컬렉션 뷰 윋스 : ", cityCollectionView.frame.size.width)
+        
+    }
 }

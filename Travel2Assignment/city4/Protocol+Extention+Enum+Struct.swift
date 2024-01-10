@@ -9,3 +9,32 @@ enum CityCollectionIdentifier: String {
     case City = "City4CollectionViewCell"
 }
 
+struct CityCellLayout {
+    // 고정적인거 넣어야 겠어
+    let cellHeight : CGFloat = 260
+    
+    let horSpacing: CGFloat = 16
+    let virticalSpacing: CGFloat = 24
+    let minSpacing: CGFloat = 8
+    let contentCount:CGFloat = 2
+    
+    let cellWidth : CGFloat //
+    let screenWidth : CGFloat //
+    
+    let itemSize: CGSize //
+    let sectionInset: UIEdgeInsets //
+    let totalSpacing: CGFloat //
+    
+    
+    init(screenWidth: CGFloat ) {
+        self.screenWidth = screenWidth
+        totalSpacing = virticalSpacing * (contentCount + 1)
+        cellWidth = (screenWidth - totalSpacing) / contentCount
+        itemSize = CGSize(width: cellWidth, height: cellHeight)
+        sectionInset = UIEdgeInsets(top: horSpacing, left: virticalSpacing, bottom: horSpacing, right: virticalSpacing)
+    }
+}
+
+protocol CityCollectionDesign {
+    func designCityLayout( collectioView: UICollectionView)
+}
