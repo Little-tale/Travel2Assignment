@@ -265,16 +265,35 @@ extension City4InfoViewController {
     func clickedAdCell() {
         let adStoyBoard = UIStoryboard(
             name: "ADStoryboard", bundle: nil)
-        let adViewCon = adStoyBoard.instantiateViewController(withIdentifier: "ADViewController")
+        
+        // 와 진짜.... as! 이거 왜,.....
+        // 이거 없다고 아무것도 안하는게 참 마음이 아프다.
+        // 이게 문제였다
+        let adViewCon = adStoyBoard.instantiateViewController(withIdentifier: "ADViewController") as! ADViewController
         
        
-        // 네비게이션 생성
+        // 네비게이션 생성 및 설정
         let adViewNavi = UINavigationController(rootViewController: adViewCon)
         adViewNavi.modalPresentationStyle = .fullScreen
+        
+        // 좌측 버튼 생성
+            // 일단 액션은 닐로 해보고
+        let uiBarButton = UIBarButtonItem(title: "돌아가기", style: .plain, target: self, action: #selector(goBack) )
+        
+        //adViewNavi.navigationItem.leftBarButtonItem = uiBarButton
+        // 안되네..?
+        // 셀프로 테스트 하니 잘 나온다.
+        // self.navigationItem.leftBarButtonItem = uiBarButton
+        
+        adViewCon.navigationItem.leftBarButtonItem = uiBarButton
+        
         present(adViewNavi, animated: true)
     }
     
-    // 이제 셀 클릭시 함수좀 불러오자
-    // 딜리게이트로 가보자
+    @objc func goBack() {
+        // 선물은 지금이야~ 프레센토와 디스미스 ~
+        self.dismiss(animated: true)
+    }
+
     
 }
