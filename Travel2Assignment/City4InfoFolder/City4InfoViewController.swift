@@ -116,6 +116,9 @@ extension City4InfoViewController :UITableViewDelegate, UITableViewDataSource {
             
             designAdLabel(uiLabel: cell.adLogoLabel, indexPath: indexPath)
             
+            // 선택.효과 제거
+            cell.selectionStyle = .none
+            
             return cell
             
         }else{
@@ -128,12 +131,15 @@ extension City4InfoViewController :UITableViewDelegate, UITableViewDataSource {
             designCityImage(uiImageView: cell.cityImageView, indexPath: indexPath)
             desingLikeImage(uiImageView: cell.cityLikeImageView , indexPath: indexPath)
             
+            // 진짜 컨텐츠만 눌렀다 꺼지게 해보자
+            
             return cell
         }
         
        
         
         
+        // MARK: - 화면전환 구현
       
         
     }
@@ -144,6 +150,20 @@ extension City4InfoViewController :UITableViewDelegate, UITableViewDataSource {
             return 150
         }
         
+    }
+    
+    // MARK: !!!!  셀 클릭시 !!!! 효과제거
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        if travelStruct.travel[indexPath.row].ad ?? false {
+            print("Test ")
+            clickedAdCell()
+        }else {
+            clickedInfoCell()
+        }
+        
+        
+        // 선택 셀 효과 제거
+        tableView.deselectRow(at: indexPath, animated: true)
     }
     
 }
@@ -223,3 +243,38 @@ extension City4InfoViewController {
     }
 }
 
+
+
+extension City4InfoViewController {
+    
+    // 1. 스토리 보드 찾아준다.
+    // 2. 스토리 보드 안에 뷰를 찾아준다
+    // 2-1 만약 푸시 팝이라면 네비게이션 달아주어야한다.
+    // 왜냐하면 뒤로가기 버튼이 생겨서? 일듯 하다.
+    // 3. 연결할 방식을 정한다.
+    func clickedInfoCell(){
+        let touristAttractionSB = UIStoryboard(name: "TouristAttracionStoryBoard", bundle: nil)
+        
+        let touristVC = touristAttractionSB.instantiateViewController(withIdentifier:"TouristAttractionViewController")
+        
+        navigationController?.pushViewController(touristVC, animated: true)
+        
+        
+    }
+    
+    func clickedAdCell() {
+        let adStoyBoard = UIStoryboard(
+            name: "ADStoryboard", bundle: nil)
+        let adViewCon = adStoyBoard.instantiateViewController(withIdentifier: "ADViewController")
+        
+       
+        // 네비게이션 생성
+        let adViewNavi = UINavigationController(rootViewController: adViewCon)
+        adViewNavi.modalPresentationStyle = .fullScreen
+        present(adViewNavi, animated: true)
+    }
+    
+    // 이제 셀 클릭시 함수좀 불러오자
+    // 딜리게이트로 가보자
+    
+}
