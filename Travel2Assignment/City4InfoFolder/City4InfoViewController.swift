@@ -187,8 +187,16 @@ extension City4InfoViewController {
         // print(#function)
     }
     func desingLikeImage(uiImageView: UIImageView, indexPath: IndexPath){
-        uiImageView.image = UIImage(systemName: "heart")
-        uiImageView.tintColor = .white
+        
+        if travelStruct.travel[indexPath.row].like ?? false {
+            uiImageView.image = UIImage(systemName: "heart")
+            uiImageView.tintColor = .white
+        }else {
+            uiImageView.image = UIImage(systemName: "heart.fill")
+            uiImageView.tintColor = .systemPink
+        }
+        
+        
         // uiImageView.showsLargeContentViewer = true
     }
 
