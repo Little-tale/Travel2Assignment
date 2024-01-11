@@ -5,6 +5,12 @@
 // 프로토콜은 가이드 책 느낌임
 import UIKit
 
+// 목표 1. 셀을 클릭하면 해당 스토리 보드로 이동하라.
+
+
+
+
+// 이넘 타입의 안정성
 enum CityCollectionIdentifier: String {
     case City = "City4CollectionViewCell"
 }
@@ -14,6 +20,8 @@ enum citySegment: Int{
     case foreigner = 2
 }
 
+
+// 관계된것
 struct CityCellLayout {
     // 고정적인거 넣어야 겠어
     let cellHeight : CGFloat = 260
@@ -40,13 +48,12 @@ struct CityCellLayout {
     }
 }
 
-
+// 이미지뷰 레디우스 처리 뭔가 함수 처럼 됨. ㅠㅠ
 struct ImageViewConerRadius {
     // 안보이게 되려나?
     private var imageWidth: Double
     
     // var conerRadius: CGFloat
-    
     // 이렇게 하면 읽기 전용으로만 가능하다고 한다.
     var conerRadius:CGFloat {
         return imageWidth / 2
@@ -67,3 +74,5 @@ protocol CityCollectionCellDesign {
     func designSubLabel()
     func designImageConerRadius(imagelayer: ImageViewConerRadius)
 }
+
+

@@ -64,4 +64,6 @@ extension City4CollectionViewCell : CityCollectionCellDesign {
         mainImageView.clipsToBounds = true
     }
     
+    
+    
 }

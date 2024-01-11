@@ -9,6 +9,8 @@ let cityList = CityInfo()
 // 정확히는 xib 파일 이름입니다.
 let xibCity4 = UINib(nibName: identy, bundle: nil)
 
+// 이동시켜주려면 일단 스토리 보드를 연결해야 할것 같다.
+// 클릭 감지로 한번 해볼까?
 
 
 class City4ViewController: UIViewController {
@@ -114,3 +116,32 @@ extension City4ViewController: CityCollectionDesign {
         
     }
 }
+
+
+
+// MARK: - 클릭감지
+extension City4ViewController {
+    func collectionView(_ collectionView: UICollectionView, shouldSelectItemAt indexPath: IndexPath) -> Bool {
+        // 1번 스토리 보드를 찾아준다.
+        let city4InfoSB = UIStoryboard(name: "City4InfoStoryBoard", bundle: nil)
+        // 2번 해당 안에 뷰 컨트롤러를 찾아준다.
+        let city4VC = city4InfoSB.instantiateViewController(withIdentifier: "City4InfoViewController") as! City4InfoViewController
+        // 3번 전환 방식 지정한다.
+        // 단 Push방식을 채택하였기 때문에
+        // 네비게이션을 넣어준다.
+        //let city4Nav = city4VC.navigationController.
+        
+        // 네비게이션이 필요한 이유는
+        // 내생각이지만, 뒤로가기 버튼이 생겨서로
+        // 판단된다.
+        city4VC.modalPresentationStyle = .automatic
+        
+        navigationController?.pushViewController(city4VC, animated: true)
+        
+        // 4번 다시 전환방식을 지정한다.
+        
+        return true
+    }
+    
+}
+

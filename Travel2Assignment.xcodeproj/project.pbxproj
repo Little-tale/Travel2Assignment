@@ -30,6 +30,13 @@
 		7B0E2B462B4E85FC00E6C038 /* PlacticeStruct.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B0E2B452B4E85FC00E6C038 /* PlacticeStruct.swift */; };
 		7B0E2B482B4EA2C900E6C038 /* Plactice_Struct+Enum.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B0E2B472B4EA2C900E6C038 /* Plactice_Struct+Enum.swift */; };
 		7B0E2B4A2B4EB6B000E6C038 /* Protocol+Extention+Enum+Struct.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B0E2B492B4EB6B000E6C038 /* Protocol+Extention+Enum+Struct.swift */; };
+		7BDD671A2B4FD4B20044341D /* City4InfoStoryBoard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7BDD67192B4FD4B20044341D /* City4InfoStoryBoard.storyboard */; };
+		7BDD671C2B4FD4DC0044341D /* City4InfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BDD671B2B4FD4DC0044341D /* City4InfoViewController.swift */; };
+		7BDD671E2B4FD5520044341D /* TravelModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BDD671D2B4FD5520044341D /* TravelModel.swift */; };
+		7BDD67222B4FE5F60044341D /* City4_AD_TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BDD67202B4FE5F60044341D /* City4_AD_TableViewCell.swift */; };
+		7BDD67232B4FE5F60044341D /* City4_AD_TableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7BDD67212B4FE5F60044341D /* City4_AD_TableViewCell.xib */; };
+		7BDD67262B4FE6320044341D /* City4TouristTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BDD67242B4FE6320044341D /* City4TouristTableViewCell.swift */; };
+		7BDD67272B4FE6320044341D /* City4TouristTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7BDD67252B4FE6320044341D /* City4TouristTableViewCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -57,6 +64,13 @@
 		7B0E2B452B4E85FC00E6C038 /* PlacticeStruct.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlacticeStruct.swift; sourceTree = "<group>"; };
 		7B0E2B472B4EA2C900E6C038 /* Plactice_Struct+Enum.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Plactice_Struct+Enum.swift"; sourceTree = "<group>"; };
 		7B0E2B492B4EB6B000E6C038 /* Protocol+Extention+Enum+Struct.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Protocol+Extention+Enum+Struct.swift"; sourceTree = "<group>"; };
+		7BDD67192B4FD4B20044341D /* City4InfoStoryBoard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = City4InfoStoryBoard.storyboard; sourceTree = "<group>"; };
+		7BDD671B2B4FD4DC0044341D /* City4InfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = City4InfoViewController.swift; sourceTree = "<group>"; };
+		7BDD671D2B4FD5520044341D /* TravelModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TravelModel.swift; path = Travel2Assignment/city4/Model/TravelModel.swift; sourceTree = SOURCE_ROOT; };
+		7BDD67202B4FE5F60044341D /* City4_AD_TableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = City4_AD_TableViewCell.swift; sourceTree = "<group>"; };
+		7BDD67212B4FE5F60044341D /* City4_AD_TableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = City4_AD_TableViewCell.xib; sourceTree = "<group>"; };
+		7BDD67242B4FE6320044341D /* City4TouristTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = City4TouristTableViewCell.swift; sourceTree = "<group>"; };
+		7BDD67252B4FE6320044341D /* City4TouristTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = City4TouristTableViewCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -90,6 +104,7 @@
 		7B0E2AEF2B4D31AB00E6C038 /* Travel2Assignment */ = {
 			isa = PBXGroup;
 			children = (
+				7B0E2B9D2B4FCFFD00E6C038 /* City4InfoFolder */,
 				7B0E2B212B4D8A5B00E6C038 /* city4 */,
 				7B0E2B182B4D66F900E6C038 /* Plactice3ColltionAndTable */,
 				7B0E2B112B4D4E3400E6C038 /* Plactice2Collection */,
@@ -169,6 +184,7 @@
 		7B0E2B3C2B4E842E00E6C038 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				7BDD671D2B4FD5520044341D /* TravelModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -227,6 +243,27 @@
 			children = (
 			);
 			path = Controller;
+			sourceTree = "<group>";
+		};
+		7B0E2B9D2B4FCFFD00E6C038 /* City4InfoFolder */ = {
+			isa = PBXGroup;
+			children = (
+				7BDD671F2B4FE5A40044341D /* City4Cell */,
+				7BDD67192B4FD4B20044341D /* City4InfoStoryBoard.storyboard */,
+				7BDD671B2B4FD4DC0044341D /* City4InfoViewController.swift */,
+			);
+			path = City4InfoFolder;
+			sourceTree = "<group>";
+		};
+		7BDD671F2B4FE5A40044341D /* City4Cell */ = {
+			isa = PBXGroup;
+			children = (
+				7BDD67202B4FE5F60044341D /* City4_AD_TableViewCell.swift */,
+				7BDD67212B4FE5F60044341D /* City4_AD_TableViewCell.xib */,
+				7BDD67242B4FE6320044341D /* City4TouristTableViewCell.swift */,
+				7BDD67252B4FE6320044341D /* City4TouristTableViewCell.xib */,
+			);
+			path = City4Cell;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -293,11 +330,14 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7BDD671A2B4FD4B20044341D /* City4InfoStoryBoard.storyboard in Resources */,
 				7B0E2B272B4D8AA100E6C038 /* City4CollectionViewCell.xib in Resources */,
 				7B0E2AFD2B4D31AD00E6C038 /* LaunchScreen.storyboard in Resources */,
+				7BDD67272B4FE6320044341D /* City4TouristTableViewCell.xib in Resources */,
 				7B0E2B172B4D4E8300E6C038 /* CityInfoAppCollectionViewCell.xib in Resources */,
 				7B0E2AFA2B4D31AD00E6C038 /* Assets.xcassets in Resources */,
 				7B0E2AF82B4D31AB00E6C038 /* Main.storyboard in Resources */,
+				7BDD67232B4FE5F60044341D /* City4_AD_TableViewCell.xib in Resources */,
 				7B0E2B1E2B4D68AE00E6C038 /* City3CollectionViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -312,10 +352,14 @@
 				7B0E2B062B4D33CE00E6C038 /* TravelCollectionViewController.swift in Sources */,
 				7B0E2B162B4D4E8300E6C038 /* CityInfoAppCollectionViewCell.swift in Sources */,
 				7B0E2AF52B4D31AB00E6C038 /* ViewController.swift in Sources */,
+				7BDD67222B4FE5F60044341D /* City4_AD_TableViewCell.swift in Sources */,
+				7BDD67262B4FE6320044341D /* City4TouristTableViewCell.swift in Sources */,
+				7BDD671E2B4FD5520044341D /* TravelModel.swift in Sources */,
 				7B0E2B482B4EA2C900E6C038 /* Plactice_Struct+Enum.swift in Sources */,
 				7B0E2B082B4D33DF00E6C038 /* TravelCollectionViewCell.swift in Sources */,
 				7B0E2AF12B4D31AB00E6C038 /* AppDelegate.swift in Sources */,
 				7B0E2B0A2B4D37B000E6C038 /* CityInfo.swift in Sources */,
+				7BDD671C2B4FD4DC0044341D /* City4InfoViewController.swift in Sources */,
 				7B0E2B462B4E85FC00E6C038 /* PlacticeStruct.swift in Sources */,
 				7B0E2B132B4D4E6800E6C038 /* CityInfoAppCollectionViewController.swift in Sources */,
 				7B0E2AF32B4D31AB00E6C038 /* SceneDelegate.swift in Sources */,

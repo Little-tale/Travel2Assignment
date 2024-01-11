@@ -374,6 +374,16 @@
             </objects>
             <point key="canvasLocation" x="-262" y="3946"/>
         </scene>
+        <!--City4InfoStoryBoard-->
+        <scene sceneID="mhQ-s6-HEY">
+            <objects>
+                <viewControllerPlaceholder storyboardName="City4InfoStoryBoard" id="dGc-Zn-bYp" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="KAB-mo-pWB"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="uJP-80-DeD" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="708" y="3946"/>
+        </scene>
         <!--Navigation Controller-->
         <scene sceneID="3AD-po-pYI">
             <objects>
