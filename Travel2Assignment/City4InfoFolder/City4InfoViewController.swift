@@ -284,8 +284,10 @@ extension City4InfoViewController {
         // 안되네..?
         // 셀프로 테스트 하니 잘 나온다.
         // self.navigationItem.leftBarButtonItem = uiBarButton
+        uiBarButton.tintColor = .red
         
         adViewCon.navigationItem.leftBarButtonItem = uiBarButton
+        
         
         present(adViewNavi, animated: true)
     }
