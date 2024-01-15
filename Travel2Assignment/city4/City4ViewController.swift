@@ -50,22 +50,15 @@ class City4ViewController: UIViewController {
     @IBAction func segmentChangedValue(_ sender: UISegmentedControl) {
         // 세그먼트 전환 감지
         if sender.selectedSegmentIndex != segmentIndexChage {
-            print(#function)
-            print(sender.selectedSegmentIndex)
             filterList = originer
             segmentIndexChage = sender.selectedSegmentIndex
         }
         
-        // print(sender.selectedSegmentIndex)
         var segment = citySegment(rawValue: sender.selectedSegmentIndex)
         
         
         // MARK: - test
         var filteringList: [City] = []
-        // 국내와 해외 불문하고 필터링 되어 나오는 문제가 발생한다.
-        // 위의 문제는 해결했지만
-        //
-        
         
         for item in filterList {
             switch segment {
@@ -84,7 +77,8 @@ class City4ViewController: UIViewController {
             }
             
         }
-        filterList = filteringList
+        filterList = CityFilter.filtering(City: filteringList, searchText: testSearchText)
+        
         print("여기는 세그먼트 ", filterList.count)
         cityCollectionView.reloadData()
         
