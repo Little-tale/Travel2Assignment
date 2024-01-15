@@ -167,6 +167,10 @@ extension City4ViewController: UISearchBarDelegate {
         
         filterList =  CityFilter.filtering(City: filterList, searchText: testSearchText)
         
+        if searchText == "" {
+            filterList = originer
+        }
+        
         cityCollectionView.reloadData()
         
         print("여기는 서치바 ", filterList.count)
