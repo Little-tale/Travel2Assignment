@@ -361,6 +361,7 @@
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="vhD-KY-rmR"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <gestureRecognizers/>
                         <constraints>
                             <constraint firstItem="hVI-CL-73j" firstAttribute="top" secondItem="3bg-3b-DwX" secondAttribute="bottom" id="5ew-YU-wqw"/>
                             <constraint firstItem="3bg-3b-DwX" firstAttribute="leading" secondItem="vhD-KY-rmR" secondAttribute="leading" constant="16" id="AwM-gt-Djk"/>

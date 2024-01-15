@@ -42,19 +42,23 @@ class City4ViewController: UIViewController {
         filterList = CityInfo.city
         // print(filterList)
         
+        searchBar.showsCancelButton = true
+        
         searchBar.delegate = self
         
         
     }
+    
     // 세그먼트
     @IBAction func segmentChangedValue(_ sender: UISegmentedControl) {
         // 세그먼트 전환 감지
         if sender.selectedSegmentIndex != segmentIndexChage {
             filterList = originer
             segmentIndexChage = sender.selectedSegmentIndex
+            
         }
-        
-        var segment = citySegment(rawValue: sender.selectedSegmentIndex)
+        view.endEditing(true)
+        let segment = citySegment(rawValue: sender.selectedSegmentIndex)
         
         
         // MARK: - test
@@ -82,7 +86,10 @@ class City4ViewController: UIViewController {
         print("여기는 세그먼트 ", filterList.count)
         cityCollectionView.reloadData()
         
+    
     }
+    
+    
     
 }
 
@@ -117,6 +124,7 @@ extension City4ViewController: UICollectionViewDataSource {
 
 extension City4ViewController: UICollectionViewDelegate {
     // 이놈은 하는게 뭐였을까
+    
 }
 
 extension City4ViewController: CityCollectionDesign {
@@ -133,6 +141,8 @@ extension City4ViewController: CityCollectionDesign {
         cityCollectionView.collectionViewLayout = layout
         
     }
+    
+    
 }
 
 
@@ -154,6 +164,10 @@ extension City4ViewController {
         return true
     }
     
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        view.endEditing(true)
+    }
+    
 }
 
 
@@ -161,22 +175,36 @@ extension City4ViewController: UISearchBarDelegate {
     
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
         // print(searchText) 잘나옴
+        filterList = originer
         
         testSearchText = searchText
         // filterList = CityFilter.filtering(searchText: testSearchText)
         
         filterList =  CityFilter.filtering(City: filterList, searchText: testSearchText)
         
-        if searchText == "" {
-            filterList = originer
-        }
-        
         cityCollectionView.reloadData()
         
         print("여기는 서치바 ", filterList.count)
         print(#function)
     }
+    
+    func searchBarResultsListButtonClicked(_ searchBar: UISearchBar) {
+        view.endEditing(true)
+    }
+    
+    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+        view.endEditing(true)
+    }
+    func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
+        searchBar.text = ""
+        self.filterList = originer
+        cityCollectionView.reloadData()
+    }
 }
 
 // 세그먼트 체인지가 먼저 발동하고
 // 그담에 서치바 함수가 실행됨
+
+
+// 탭제스처 없이 키보드 내리기
+

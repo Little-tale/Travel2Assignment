@@ -5,28 +5,9 @@
 //
 
 import Foundation
-/*
- var testFilter = [City]()
- 
- if searchText == "" {
-     filterList = originer
-     print(filterList)
-     cityCollectionView.reloadData()
- } else {
-     for citys in originer {
-         //print(citys.city_name, citys.city_english_name,citys.city_explain)
-         
-         if citys.city_name.contains(searchText) ||
-             citys.city_english_name.contains(searchText) ||
-             citys.city_explain.contains(searchText){
-             
-             print(citys.city_name)
-             testFilter.append(citys)
-         }
-     }
-     filterList = testFilter
- }
- */
+
+// 대소문자 구분을 위한 로직 작성
+
 
 
 // 이넘 타입의 안정성
@@ -50,7 +31,7 @@ struct City {
 
 struct CityFilter {
     let orginer = CityInfo.city
-        // 글자만 받아왔을때,
+        // 글자만 받아왔을때
      static func filtering(searchText: String) -> [City] {
         var testFilter = [City]()
         var filterList = originer
@@ -75,9 +56,14 @@ struct CityFilter {
         
         if searchText == "" {} else {
             for citys in filterList {
+                let upperCityName = citys.city_english_name.uppercased()
+                let upperCityExplain = citys.city_explain.uppercased()
+                
+                // 한글은 제외한 영어부분만 처리
+                
                 if citys.city_name.contains(searchText) ||
-                    citys.city_english_name.contains(searchText) ||
-                    citys.city_explain.contains(searchText){
+                    upperCityName.contains(searchText.uppercased()) ||
+                    upperCityExplain.contains(searchText.uppercased()) {
                     
                     // print(citys.city_name)
                     testFilter.append(citys)
