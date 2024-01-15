@@ -14,6 +14,7 @@ let xibCity4 = UINib(nibName: identy, bundle: nil)
 let originer = CityInfo.city
 let filterList = CityInfo.city
 var testSearchText = ""
+var segmentIndexChage = 0
 
 class City4ViewController: UIViewController {
     @IBOutlet var cityCollectionView: UICollectionView!
@@ -36,7 +37,7 @@ class City4ViewController: UIViewController {
         
         // 아오 이건 다지인 구조체를 이용한 프로토콜 구현
         designCityLayout(collectioView: cityCollectionView)
- 
+        
         // 앱 화면 띄울때 전체 넣어놈
         filterList = CityInfo.city
         // print(filterList)
@@ -47,16 +48,24 @@ class City4ViewController: UIViewController {
     }
     // 세그먼트
     @IBAction func segmentChangedValue(_ sender: UISegmentedControl) {
-
-        // print(sender.selectedSegmentIndex)
+        // 세그먼트 전환 감지
+        if sender.selectedSegmentIndex != segmentIndexChage {
+            print(#function)
+            print(sender.selectedSegmentIndex)
+            filterList = originer
+            segmentIndexChage = sender.selectedSegmentIndex
+        }
         
-        let segment = citySegment(rawValue: sender.selectedSegmentIndex) // ! 붙이면 none 없어짐
+        // print(sender.selectedSegmentIndex)
+        var segment = citySegment(rawValue: sender.selectedSegmentIndex)
+        
         
         // MARK: - test
         var filteringList: [City] = []
         // 국내와 해외 불문하고 필터링 되어 나오는 문제가 발생한다.
-        // 원래의 로직은 걸러낸 애들을 보여주었는데
-        // 이제는 걸러내고 남은 애들을 보여주는 편이 나아질것 같다.
+        // 위의 문제는 해결했지만
+        //
+        
         
         for item in filterList {
             switch segment {
@@ -70,20 +79,17 @@ class City4ViewController: UIViewController {
                 if !item.domestic_travel {
                     filteringList.append(item)
                 }
-            case .none:// 이거 citySegment 가 Optional 이라 그럼
-                print("논이 발생함.")
-                return
+            default :
+                filteringList = originer
             }
+            
         }
-        filterList = CityFilter.filtering(City: filteringList, searchText: testSearchText)
-        
-        // print("asdsadasdsadsa",filteringList[0].city_name)
-        
-        //print(filteringList)
+        filterList = filteringList
+        print("여기는 세그먼트 ", filterList.count)
         cityCollectionView.reloadData()
+        
     }
     
-
 }
 
 
@@ -100,18 +106,18 @@ extension City4ViewController: UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         // 셀(아이템) 디자인은 우짜실까요?
-            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: identy, for: indexPath) as! City4CollectionViewCell
-            
-            let city = filterList
-            
-            let url = URL(string: city[indexPath.item ].city_image )
-            cell.mainImageView.kf.setImage(with: url)
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: identy, for: indexPath) as! City4CollectionViewCell
         
-            cell.mainLabel.text = "\(city[indexPath.item].city_name) | \(city[indexPath.item].city_english_name)"
-            
-            cell.subLabel.text = city[indexPath.item].city_explain
-            
-            return cell
+        let city = filterList
+        
+        let url = URL(string: city[indexPath.item ].city_image )
+        cell.mainImageView.kf.setImage(with: url)
+        
+        cell.mainLabel.text = "\(city[indexPath.item].city_name) | \(city[indexPath.item].city_english_name)"
+        
+        cell.subLabel.text = city[indexPath.item].city_explain
+        
+        return cell
     }
 }
 
@@ -163,12 +169,13 @@ extension City4ViewController: UISearchBarDelegate {
         // print(searchText) 잘나옴
         
         testSearchText = searchText
-        filterList = CityFilter.filtering(searchText: testSearchText)
+        // filterList = CityFilter.filtering(searchText: testSearchText)
         
         filterList =  CityFilter.filtering(City: filterList, searchText: testSearchText)
         
         cityCollectionView.reloadData()
         
+        print("여기는 서치바 ", filterList.count)
         print(#function)
     }
 }

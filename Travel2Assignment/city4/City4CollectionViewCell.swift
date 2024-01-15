@@ -30,10 +30,10 @@ extension City4CollectionViewCell : CityCollectionCellDesign {
     
     func designMainImage(){
  
-        print("이미지 높이 : ", mainImageView.frame.size.height)
+        //print("이미지 높이 : ", mainImageView.frame.size.height)
         mainImageView.clipsToBounds = true
-        print("이미지 높이 : ", mainImageView.frame.size.height)
-        print("이미지 넓이 : ", mainImageView.frame.size.width)
+        //print("이미지 높이 : ", mainImageView.frame.size.height)
+        //print("이미지 넓이 : ", mainImageView.frame.size.width)
         mainImageView.backgroundColor = .lightGray
         
         mainImageView.contentMode = .scaleAspectFill
@@ -58,7 +58,7 @@ extension City4CollectionViewCell : CityCollectionCellDesign {
     }
     
     func designImageConerRadius(imagelayer: ImageViewConerRadius){
-        print(imagelayer.conerRadius)
+        // print(imagelayer.conerRadius)
         mainImageView.layer.cornerRadius = imagelayer.conerRadius
         // 벗어나는걸 막기
         mainImageView.clipsToBounds = true
