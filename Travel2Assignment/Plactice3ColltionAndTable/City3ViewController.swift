@@ -41,7 +41,7 @@ class City3ViewController: UIViewController,UICollectionViewDelegate,UICollectio
     }
     // 디자인은?
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: identi, for: indexPath) as! City3CollectionViewCell
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: City3CollectionViewCell.identi, for: indexPath) as! City3CollectionViewCell
        
         let indexItem = indexPath.item
         let infoCity = CityInfo.city[indexItem]
@@ -72,10 +72,11 @@ class City3ViewController: UIViewController,UICollectionViewDelegate,UICollectio
         // xib 레지스터 등록을 해주어야 한다
         // 그 두명이 찾아야함 이놈이 찾는게 아님 ㅜㅜㅜㅠ
         
-        City3CollectionView.register(xibCell, forCellWithReuseIdentifier: identi)
+        City3CollectionView.register(xibCell, forCellWithReuseIdentifier: City3CollectionViewCell.identi)
         
         // 이제 부하직원 2명 연결해 주어야 합니다.
         // UICollectionViewDelegate, UICollectionViewDataSource
+        
         City3CollectionView.dataSource = self
         City3CollectionView.delegate = self
         

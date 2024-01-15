@@ -59,8 +59,8 @@ struct CityFilter {
                 let upperCityName = citys.city_english_name.uppercased()
                 let upperCityExplain = citys.city_explain.uppercased()
                 
-                var whiteSpaceName = noWhiteSpace(String: upperCityName)
-                var whiteSpaceExplain = noWhiteSpace(String: upperCityExplain)
+                let whiteSpaceName = noWhiteSpace(String: upperCityName)
+                let whiteSpaceExplain = noWhiteSpace(String: upperCityExplain)
                 let whiteSpaceSearch = noWhiteSpace(String: searchText)
                 
                 // 한글은 제외한 영어부분만 처리

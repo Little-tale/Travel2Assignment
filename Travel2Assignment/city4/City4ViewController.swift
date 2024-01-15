@@ -1,13 +1,12 @@
 import UIKit
 import Kingfisher
 
-private let identy = CityCollectionIdentifier.City.rawValue
 let cityList = CityInfo()
 //  let segment = citySegment.
 
 // 아이덴티를 달라는건 아님
 // 정확히는 xib 파일 이름입니다.
-let xibCity4 = UINib(nibName: identy, bundle: nil)
+let xibCity4 = UINib(nibName: City4CollectionViewCell.identi, bundle: nil)
 
 // 이동시켜주려면 일단 스토리 보드를 연결해야 할것 같다.
 // 클릭 감지로 한번 해볼까?
@@ -29,7 +28,7 @@ class City4ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // 레지스터 등록
-        cityCollectionView.register(xibCity4, forCellWithReuseIdentifier: identy)
+        cityCollectionView.register(xibCity4, forCellWithReuseIdentifier: City4CollectionViewCell.identi)
         
         // 부하직원들아 니들을 구현해준게 나야~!
         cityCollectionView.dataSource = self
@@ -43,7 +42,6 @@ class City4ViewController: UIViewController {
         // print(filterList)
         
         searchBar.showsCancelButton = true
-        
         searchBar.delegate = self
         
         
@@ -101,13 +99,13 @@ extension City4ViewController: UICollectionViewDataSource {
     
     // 셀(아이템) 개수는 몇개실까요?
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return filterList.count //cityList.city.count
+        return filterList.count
     }
     
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         // 셀(아이템) 디자인은 우짜실까요?
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: identy, for: indexPath) as! City4CollectionViewCell
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: City4CollectionViewCell.identi, for: indexPath) as! City4CollectionViewCell
         
         let city = filterList
         
@@ -130,6 +128,7 @@ extension City4ViewController: UICollectionViewDelegate {
 extension City4ViewController: CityCollectionDesign {
     
     func designCityLayout(collectioView: UICollectionView) {
+        
         let layout = UICollectionViewFlowLayout()
         let screenWidth = UIScreen.main.bounds.width
         let structLayout = CityCellLayout(screenWidth: screenWidth)
@@ -151,12 +150,11 @@ extension City4ViewController: CityCollectionDesign {
 extension City4ViewController {
     func collectionView(_ collectionView: UICollectionView, shouldSelectItemAt indexPath: IndexPath) -> Bool {
         // 1번 스토리 보드를 찾아준다.
-        let city4InfoSB = UIStoryboard(name: "City4InfoStoryBoard", bundle: nil)
+        let city4InfoSB = UIStoryboard(name: storyBoardName.City4Info.rawValue, bundle: nil)
         // 2번 해당 안에 뷰 컨트롤러를 찾아준다.
-        let city4VC = city4InfoSB.instantiateViewController(withIdentifier: "City4InfoViewController") as! City4InfoViewController
+        let city4VC = city4InfoSB.instantiateViewController(withIdentifier: City4InfoViewController.identi) as! City4InfoViewController
         
         city4VC.modalPresentationStyle = .automatic
-        
         navigationController?.pushViewController(city4VC, animated: true)
         
         // 4번 다시 전환방식을 지정한다.
@@ -174,11 +172,9 @@ extension City4ViewController {
 extension City4ViewController: UISearchBarDelegate {
     
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
-        // print(searchText) 잘나옴
         filterList = originer
         
         testSearchText = searchText
-        // filterList = CityFilter.filtering(searchText: testSearchText)
         
         filterList =  CityFilter.filtering(City: filterList, searchText: testSearchText)
         
@@ -199,12 +195,7 @@ extension City4ViewController: UISearchBarDelegate {
         searchBar.text = ""
         self.filterList = originer
         cityCollectionView.reloadData()
+        view.endEditing(true)
     }
 }
-
-// 세그먼트 체인지가 먼저 발동하고
-// 그담에 서치바 함수가 실행됨
-
-
-// 탭제스처 없이 키보드 내리기
 

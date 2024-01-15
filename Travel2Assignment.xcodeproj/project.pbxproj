@@ -30,6 +30,7 @@
 		7B0E2B462B4E85FC00E6C038 /* PlacticeStruct.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B0E2B452B4E85FC00E6C038 /* PlacticeStruct.swift */; };
 		7B0E2B482B4EA2C900E6C038 /* Plactice_Struct+Enum.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B0E2B472B4EA2C900E6C038 /* Plactice_Struct+Enum.swift */; };
 		7B0E2B4A2B4EB6B000E6C038 /* Protocol+Extention+Enum+Struct.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B0E2B492B4EB6B000E6C038 /* Protocol+Extention+Enum+Struct.swift */; };
+		7B18E83F2B5576C300480759 /* Identifiers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B18E83E2B5576C300480759 /* Identifiers.swift */; };
 		7BDD671A2B4FD4B20044341D /* City4InfoStoryBoard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7BDD67192B4FD4B20044341D /* City4InfoStoryBoard.storyboard */; };
 		7BDD671C2B4FD4DC0044341D /* City4InfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BDD671B2B4FD4DC0044341D /* City4InfoViewController.swift */; };
 		7BDD671E2B4FD5520044341D /* TravelModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BDD671D2B4FD5520044341D /* TravelModel.swift */; };
@@ -69,6 +70,7 @@
 		7B0E2B452B4E85FC00E6C038 /* PlacticeStruct.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlacticeStruct.swift; sourceTree = "<group>"; };
 		7B0E2B472B4EA2C900E6C038 /* Plactice_Struct+Enum.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Plactice_Struct+Enum.swift"; sourceTree = "<group>"; };
 		7B0E2B492B4EB6B000E6C038 /* Protocol+Extention+Enum+Struct.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Protocol+Extention+Enum+Struct.swift"; sourceTree = "<group>"; };
+		7B18E83E2B5576C300480759 /* Identifiers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Identifiers.swift; sourceTree = "<group>"; };
 		7BDD67192B4FD4B20044341D /* City4InfoStoryBoard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = City4InfoStoryBoard.storyboard; sourceTree = "<group>"; };
 		7BDD671B2B4FD4DC0044341D /* City4InfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = City4InfoViewController.swift; sourceTree = "<group>"; };
 		7BDD671D2B4FD5520044341D /* TravelModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TravelModel.swift; path = Travel2Assignment/city4/Model/TravelModel.swift; sourceTree = SOURCE_ROOT; };
@@ -114,6 +116,7 @@
 		7B0E2AEF2B4D31AB00E6C038 /* Travel2Assignment */ = {
 			isa = PBXGroup;
 			children = (
+				7B18E83D2B5576A000480759 /* Identi */,
 				7BDD672D2B50432E0044341D /* City4ADFolder  */,
 				7BDD67282B5038D70044341D /* City4TouristAttrcionFolder */,
 				7B0E2B9D2B4FCFFD00E6C038 /* City4InfoFolder */,
@@ -267,6 +270,14 @@
 			path = City4InfoFolder;
 			sourceTree = "<group>";
 		};
+		7B18E83D2B5576A000480759 /* Identi */ = {
+			isa = PBXGroup;
+			children = (
+				7B18E83E2B5576C300480759 /* Identifiers.swift */,
+			);
+			path = Identi;
+			sourceTree = "<group>";
+		};
 		7BDD671F2B4FE5A40044341D /* City4Cell */ = {
 			isa = PBXGroup;
 			children = (
@@ -402,6 +413,7 @@
 				7B0E2B4A2B4EB6B000E6C038 /* Protocol+Extention+Enum+Struct.swift in Sources */,
 				7B0E2B232B4D8A8200E6C038 /* City4ViewController.swift in Sources */,
 				7B0E2B262B4D8AA100E6C038 /* City4CollectionViewCell.swift in Sources */,
+				7B18E83F2B5576C300480759 /* Identifiers.swift in Sources */,
 				7B0E2B202B4D68C600E6C038 /* City3ViewController.swift in Sources */,
 				7B0E2B102B4D3EBB00E6C038 /* TestCollectionViewController.swift in Sources */,
 				7B0E2B1D2B4D68AE00E6C038 /* City3CollectionViewCell.swift in Sources */,
