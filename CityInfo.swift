@@ -31,8 +31,8 @@ struct City {
 
 struct CityFilter {
     let orginer = CityInfo.city
-        // 글자만 받아왔을때
-     static func filtering(searchText: String) -> [City] {
+    // 글자만 받아왔을때
+    static func filtering(searchText: String) -> [City] {
         var testFilter = [City]()
         var filterList = originer
         if searchText == "" {} else {
@@ -59,13 +59,17 @@ struct CityFilter {
                 let upperCityName = citys.city_english_name.uppercased()
                 let upperCityExplain = citys.city_explain.uppercased()
                 
+                var whiteSpaceName = noWhiteSpace(String: upperCityName)
+                var whiteSpaceExplain = noWhiteSpace(String: upperCityExplain)
+                let whiteSpaceSearch = noWhiteSpace(String: searchText)
+                
                 // 한글은 제외한 영어부분만 처리
                 
-                if citys.city_name.contains(searchText) ||
-                    upperCityName.contains(searchText.uppercased()) ||
-                    upperCityExplain.contains(searchText.uppercased()) {
+                if citys.city_name.contains(whiteSpaceSearch) ||
+                    whiteSpaceName.contains(whiteSpaceSearch.uppercased()) ||
+                    whiteSpaceExplain.contains(whiteSpaceSearch.uppercased()) {
                     
-                    // print(citys.city_name)
+                    
                     testFilter.append(citys)
                 }
             }
@@ -74,6 +78,16 @@ struct CityFilter {
         return filterList
     }
     
+}
+
+func noWhiteSpace(String str: String ) -> String{
+    var whiteSpaceName = ""
+    for nul in str {
+        if nul != " "{
+            whiteSpaceName.append(nul)
+        }
+    }
+    return whiteSpaceName
 }
 
  
