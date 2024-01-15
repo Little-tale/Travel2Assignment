@@ -10,15 +10,7 @@ import UIKit
 
 
 
-// 이넘 타입의 안정성
-enum CityCollectionIdentifier: String {
-    case City = "City4CollectionViewCell"
-}
-enum citySegment: Int{
-    case every = 0
-    case korea = 1
-    case foreigner = 2
-}
+
 
 
 // 관계된것

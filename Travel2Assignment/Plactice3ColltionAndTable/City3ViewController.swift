@@ -37,14 +37,14 @@ class City3ViewController: UIViewController,UICollectionViewDelegate,UICollectio
     
     // 셀몇개?
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return infoList.city.count
+        return CityInfo.city.count
     }
     // 디자인은?
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: identi, for: indexPath) as! City3CollectionViewCell
        
         let indexItem = indexPath.item
-        let infoCity = infoList.city[indexItem]
+        let infoCity = CityInfo.city[indexItem]
         
         // cell.backgroundColor = .gray
         

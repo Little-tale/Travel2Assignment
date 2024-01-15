@@ -5,6 +5,41 @@
 //
 
 import Foundation
+/*
+ var testFilter = [City]()
+ 
+ if searchText == "" {
+     filterList = originer
+     print(filterList)
+     cityCollectionView.reloadData()
+ } else {
+     for citys in originer {
+         //print(citys.city_name, citys.city_english_name,citys.city_explain)
+         
+         if citys.city_name.contains(searchText) ||
+             citys.city_english_name.contains(searchText) ||
+             citys.city_explain.contains(searchText){
+             
+             print(citys.city_name)
+             testFilter.append(citys)
+         }
+     }
+     filterList = testFilter
+ }
+ */
+
+
+// 이넘 타입의 안정성
+enum CityCollectionIdentifier: String {
+    case City = "City4CollectionViewCell"
+}
+enum citySegment: Int{
+    case every = 0
+    case korea = 1
+    case foreigner = 2
+}
+
+
 struct City {
     var city_name: String
     var city_english_name: String
@@ -13,9 +48,51 @@ struct City {
     var domestic_travel: Bool
 }
 
+struct CityFilter {
+    let orginer = CityInfo.city
+        // 글자만 받아왔을때,
+     static func filtering(searchText: String) -> [City] {
+        var testFilter = [City]()
+        var filterList = originer
+        if searchText == "" {} else {
+            for citys in originer {
+                if citys.city_name.contains(searchText) ||
+                    citys.city_english_name.contains(searchText) ||
+                    citys.city_explain.contains(searchText){
+                    
+                    // print(citys.city_name)
+                    testFilter.append(citys)
+                }
+            }
+            filterList = testFilter
+        }
+        return filterList
+    }
+    // [City] 도 주었을때,
+    static func filtering(City: [City], searchText: String ) -> [City] {
+        var testFilter: [City] = []
+        var filterList = City
+        
+        if searchText == "" {} else {
+            for citys in filterList {
+                if citys.city_name.contains(searchText) ||
+                    citys.city_english_name.contains(searchText) ||
+                    citys.city_explain.contains(searchText){
+                    
+                    // print(citys.city_name)
+                    testFilter.append(citys)
+                }
+            }
+            filterList = testFilter
+        }
+        return filterList
+    }
+    
+}
+
  
 struct CityInfo {
-    let city: [City] = [
+    static let city: [City] = [
         City(city_name: "방콕", city_english_name: "Bangkok", city_explain: "방콕, 파타야, 후아힌, 코사멧, 코사무이", city_image: "https://i.namu.wiki/i/OUKHuXT-QXe-wDgGE_9hMfEW9Sb3lyMWl0SSbpTQyfl0Lw3rs_A_DuVyXBNXTFG3FUkfmy7hBjL68dgLzssEQg.webp", domestic_travel: false),
         City(city_name: "오사카", city_english_name: "Osaka", city_explain: "오사카, 교토, 고베, 나라", city_image: "https://i.namu.wiki/i/IyejHd9WlEd118tJq1coTwS4RpkaqIY0JhPbbiVX6WWpkkoWbLK-R4DkPg8GN4cLvm0RmhWuBTrY7HymFxoUhFY48GKKxnmzsXNu7VZBO2x1y9wsOizxOxb0ngLmTqjQeZVd4pgySwBDqRvoc9LYsw.webp", domestic_travel: false),
         City(city_name: "다낭", city_english_name: "Danang", city_explain: "다낭, 호이안, 후에", city_image: "https://i.namu.wiki/i/skBWgWUvf6QsFa_GV-falaAW6bO-g1FDlSTTL8AHZ-WfRdDVwpll5AR29N4oPl1H0SMqIAP87clppdEpmGdrwVEFAAT47BUVNCk02OrN9S7a1m3o4AKoEFO1UUTUvtO02mFV2tCOAz9l32hWwKDESA.webp", domestic_travel: false),

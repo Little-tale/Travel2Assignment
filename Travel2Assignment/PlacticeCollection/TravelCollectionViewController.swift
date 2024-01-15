@@ -60,7 +60,7 @@ class TravelCollectionViewController: UICollectionViewController {
     // 셀은 몇개?
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         // print(cityInfo.city.count) // 15
-        return cityInfo.city.count
+        return CityInfo.city.count
     }
     // 셀 디자인?
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
@@ -73,7 +73,7 @@ class TravelCollectionViewController: UICollectionViewController {
         // cell.backgroundColor = .green
         
         // 셀 이미지를 넣어본다. KingFisher 를 이용해 보겠어
-        let url = URL(string: cityInfo.city[indexPath.item].city_image)
+        let url = URL(string: CityInfo.city[indexPath.item].city_image)
         // print(cell.imageView)
         cell.imageView.kf.setImage(with: url)
         //cell.imageView.clipsToBounds = true
@@ -83,10 +83,10 @@ class TravelCollectionViewController: UICollectionViewController {
         cell.mainLabel.textAlignment = .center
         cell.subLabel.textAlignment = .center
         
-        let text = cityInfo.city[indexPath.item].city_name + " | " + cityInfo.city[indexPath.item].city_english_name
+        let text = CityInfo.city[indexPath.item].city_name + " | " + CityInfo.city[indexPath.item].city_english_name
         
         cell.mainLabel.text = text
-        cell.subLabel.text = cityInfo.city[indexPath.item].city_explain
+        cell.subLabel.text = CityInfo.city[indexPath.item].city_explain
         
         cell.mainLabel.font = UIFont.systemFont(ofSize: 16, weight: .heavy)
         cell.subLabel.font = .systemFont(ofSize: 12)

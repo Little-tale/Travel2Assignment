@@ -15,7 +15,7 @@ class City4TouristTableViewCell: UITableViewCell {
     @IBOutlet var city4_SaveLabel: UILabel!
     @IBOutlet var cityImageView: UIImageView!
     @IBOutlet var cityLikeImageView: UIImageView!
-    
+      
     override func awakeFromNib() {
         super.awakeFromNib()
         

@@ -41,6 +41,7 @@
 		7BDD672C2B5039690044341D /* TouristAttractionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BDD672B2B5039690044341D /* TouristAttractionViewController.swift */; };
 		7BDD672F2B5043570044341D /* ADStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7BDD672E2B5043570044341D /* ADStoryboard.storyboard */; };
 		7BDD67312B50436A0044341D /* ADViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BDD67302B50436A0044341D /* ADViewController.swift */; };
+		7BDD67342B50BE610044341D /* Cosmos in Frameworks */ = {isa = PBXBuildFile; productRef = 7BDD67332B50BE610044341D /* Cosmos */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -86,6 +87,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7BDD67342B50BE610044341D /* Cosmos in Frameworks */,
 				7B0E2B0D2B4D37C600E6C038 /* Kingfisher in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -312,6 +314,7 @@
 			name = Travel2Assignment;
 			packageProductDependencies = (
 				7B0E2B0C2B4D37C600E6C038 /* Kingfisher */,
+				7BDD67332B50BE610044341D /* Cosmos */,
 			);
 			productName = Travel2Assignment;
 			productReference = 7B0E2AED2B4D31AB00E6C038 /* Travel2Assignment.app */;
@@ -343,6 +346,7 @@
 			mainGroup = 7B0E2AE42B4D31AB00E6C038;
 			packageReferences = (
 				7B0E2B0B2B4D37C600E6C038 /* XCRemoteSwiftPackageReference "Kingfisher" */,
+				7BDD67322B50BE610044341D /* XCRemoteSwiftPackageReference "Cosmos" */,
 			);
 			productRefGroup = 7B0E2AEE2B4D31AB00E6C038 /* Products */;
 			projectDirPath = "";
@@ -639,6 +643,14 @@
 				minimumVersion = 7.10.1;
 			};
 		};
+		7BDD67322B50BE610044341D /* XCRemoteSwiftPackageReference "Cosmos" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/evgenyneu/Cosmos";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 24.0.0;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -646,6 +658,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 7B0E2B0B2B4D37C600E6C038 /* XCRemoteSwiftPackageReference "Kingfisher" */;
 			productName = Kingfisher;
+		};
+		7BDD67332B50BE610044341D /* Cosmos */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 7BDD67322B50BE610044341D /* XCRemoteSwiftPackageReference "Cosmos" */;
+			productName = Cosmos;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

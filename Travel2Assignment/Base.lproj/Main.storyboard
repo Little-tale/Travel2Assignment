@@ -332,7 +332,7 @@
                                 </connections>
                             </segmentedControl>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="T3t-HH-dNw">
-                                <rect key="frame" x="0.0" y="138" width="393" height="680"/>
+                                <rect key="frame" x="0.0" y="194" width="393" height="624"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="8SR-eG-bbl">
                                     <size key="itemSize" width="128" height="128"/>
@@ -351,28 +351,39 @@
                                     </collectionViewCell>
                                 </cells>
                             </collectionView>
+                            <searchBar contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="hVI-CL-73j">
+                                <rect key="frame" x="0.0" y="138" width="393" height="56"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <outlet property="delegate" destination="Kgf-4h-m6Y" id="jhR-BA-LYG"/>
+                                </connections>
+                            </searchBar>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="vhD-KY-rmR"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
+                            <constraint firstItem="hVI-CL-73j" firstAttribute="top" secondItem="3bg-3b-DwX" secondAttribute="bottom" id="5ew-YU-wqw"/>
                             <constraint firstItem="3bg-3b-DwX" firstAttribute="leading" secondItem="vhD-KY-rmR" secondAttribute="leading" constant="16" id="AwM-gt-Djk"/>
-                            <constraint firstItem="T3t-HH-dNw" firstAttribute="top" secondItem="3bg-3b-DwX" secondAttribute="bottom" id="Bh0-9i-hYv"/>
+                            <constraint firstItem="T3t-HH-dNw" firstAttribute="top" secondItem="hVI-CL-73j" secondAttribute="bottom" id="FwC-c7-AeE"/>
                             <constraint firstItem="vhD-KY-rmR" firstAttribute="trailing" secondItem="3bg-3b-DwX" secondAttribute="trailing" constant="16" id="IP5-Id-aQL"/>
-                            <constraint firstItem="vhD-KY-rmR" firstAttribute="bottom" secondItem="T3t-HH-dNw" secondAttribute="bottom" id="Kca-sb-eDf"/>
-                            <constraint firstItem="T3t-HH-dNw" firstAttribute="leading" secondItem="vhD-KY-rmR" secondAttribute="leading" id="KsW-PI-oPD"/>
+                            <constraint firstItem="hVI-CL-73j" firstAttribute="trailing" secondItem="vhD-KY-rmR" secondAttribute="trailing" id="Kon-hC-pSU"/>
                             <constraint firstItem="3bg-3b-DwX" firstAttribute="top" secondItem="vhD-KY-rmR" secondAttribute="top" constant="4" id="LdI-2X-pSV"/>
-                            <constraint firstItem="vhD-KY-rmR" firstAttribute="trailing" secondItem="T3t-HH-dNw" secondAttribute="trailing" id="qMP-JF-oap"/>
+                            <constraint firstItem="T3t-HH-dNw" firstAttribute="leading" secondItem="vhD-KY-rmR" secondAttribute="leading" id="M31-xo-21L"/>
+                            <constraint firstItem="T3t-HH-dNw" firstAttribute="trailing" secondItem="vhD-KY-rmR" secondAttribute="trailing" id="ON9-ZM-hX0"/>
+                            <constraint firstItem="hVI-CL-73j" firstAttribute="leading" secondItem="vhD-KY-rmR" secondAttribute="leading" id="d18-1G-awx"/>
+                            <constraint firstItem="T3t-HH-dNw" firstAttribute="bottom" secondItem="vhD-KY-rmR" secondAttribute="bottom" id="k0m-Ib-Bdf"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="인기 도시" id="aBj-EA-xwG"/>
                     <connections>
                         <outlet property="cityCollectionView" destination="T3t-HH-dNw" id="WfN-0R-UbP"/>
+                        <outlet property="searchBar" destination="hVI-CL-73j" id="sGi-vA-dy9"/>
                         <outlet property="segmenteCity" destination="3bg-3b-DwX" id="ljn-sB-hfc"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ouo-uU-6qK" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-262" y="3946"/>
+            <point key="canvasLocation" x="-263.35877862595419" y="3945.7746478873241"/>
         </scene>
         <!--City4InfoStoryBoard-->
         <scene sceneID="mhQ-s6-HEY">

@@ -32,7 +32,7 @@ class CityInfoAppCollectionViewController: UICollectionViewController{
     }
     // 아이템 갯수
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return infoCityList.city.count
+        return CityInfo.city.count
     }
     
     // 2-2. 셀의 디자인은?
@@ -40,15 +40,15 @@ class CityInfoAppCollectionViewController: UICollectionViewController{
     
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: identy , for: indexPath) as! CityInfoAppCollectionViewCell
 
-        let url = URL(string: infoCityList.city[indexPath.item].city_image)
+        let url = URL(string: CityInfo.city[indexPath.item].city_image)
         
         cell.infoImageView.kf.setImage(with: url)
          
-        let mainText = infoCityList.city[indexPath.item].city_name + " | " + infoCityList.city[indexPath.item].city_english_name
+        let mainText = CityInfo.city[indexPath.item].city_name + " | " + CityInfo.city[indexPath.item].city_english_name
         
         cell.infoMainLabel.text = mainText
                
-        cell.infoSubLabel.text = infoCityList.city[indexPath.item].city_explain
+        cell.infoSubLabel.text = CityInfo.city[indexPath.item].city_explain
        
         return cell
         

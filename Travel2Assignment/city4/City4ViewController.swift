@@ -11,11 +11,15 @@ let xibCity4 = UINib(nibName: identy, bundle: nil)
 
 // 이동시켜주려면 일단 스토리 보드를 연결해야 할것 같다.
 // 클릭 감지로 한번 해볼까?
-
+let originer = CityInfo.city
+let filterList = CityInfo.city
+var testSearchText = ""
 
 class City4ViewController: UIViewController {
     @IBOutlet var cityCollectionView: UICollectionView!
     @IBOutlet var segmenteCity: UISegmentedControl!
+    @IBOutlet var searchBar: UISearchBar!
+    
     
     // 잠깐씩 담아둘 리스트
     var filterList: [City] = []
@@ -34,34 +38,48 @@ class City4ViewController: UIViewController {
         designCityLayout(collectioView: cityCollectionView)
  
         // 앱 화면 띄울때 전체 넣어놈
-        filterList = cityList.city
+        filterList = CityInfo.city
         // print(filterList)
+        
+        searchBar.delegate = self
         
         
     }
-    
+    // 세그먼트
     @IBAction func segmentChangedValue(_ sender: UISegmentedControl) {
 
-        print(sender.selectedSegmentIndex)
+        // print(sender.selectedSegmentIndex)
         
         let segment = citySegment(rawValue: sender.selectedSegmentIndex) // ! 붙이면 none 없어짐
         
+        // MARK: - test
         var filteringList: [City] = []
+        // 국내와 해외 불문하고 필터링 되어 나오는 문제가 발생한다.
+        // 원래의 로직은 걸러낸 애들을 보여주었는데
+        // 이제는 걸러내고 남은 애들을 보여주는 편이 나아질것 같다.
         
-        for item in cityList.city {
+        for item in filterList {
             switch segment {
-            case .every: filteringList.append(item)
-            case .korea: if item.domestic_travel {filteringList.append(item)}
-            case .foreigner : if !item.domestic_travel {filteringList.append(item)}
+            case .every: filteringList = originer ;// print(filterList)
+            case .korea: // 한국이실때
+                if item.domestic_travel {
+                    filteringList.append(item)
+                    
+                }
+            case .foreigner :
+                if !item.domestic_travel {
+                    filteringList.append(item)
+                }
             case .none:// 이거 citySegment 가 Optional 이라 그럼
+                print("논이 발생함.")
                 return
             }
-            
         }
+        filterList = CityFilter.filtering(City: filteringList, searchText: testSearchText)
         
-        filterList.removeAll()
-        filterList = filteringList
-        print(filteringList)
+        // print("asdsadasdsadsa",filteringList[0].city_name)
+        
+        //print(filteringList)
         cityCollectionView.reloadData()
     }
     
@@ -126,14 +144,7 @@ extension City4ViewController {
         let city4InfoSB = UIStoryboard(name: "City4InfoStoryBoard", bundle: nil)
         // 2번 해당 안에 뷰 컨트롤러를 찾아준다.
         let city4VC = city4InfoSB.instantiateViewController(withIdentifier: "City4InfoViewController") as! City4InfoViewController
-        // 3번 전환 방식 지정한다.
-        // 단 Push방식을 채택하였기 때문에
-        // 네비게이션을 넣어준다.
-        //let city4Nav = city4VC.navigationController.
         
-        // 네비게이션이 필요한 이유는
-        // 내생각이지만, 뒤로가기 버튼이 생겨서로
-        // 판단된다.
         city4VC.modalPresentationStyle = .automatic
         
         navigationController?.pushViewController(city4VC, animated: true)
@@ -145,3 +156,22 @@ extension City4ViewController {
     
 }
 
+
+extension City4ViewController: UISearchBarDelegate {
+    
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+        // print(searchText) 잘나옴
+        
+        testSearchText = searchText
+        filterList = CityFilter.filtering(searchText: testSearchText)
+        
+        filterList =  CityFilter.filtering(City: filterList, searchText: testSearchText)
+        
+        cityCollectionView.reloadData()
+        
+        print(#function)
+    }
+}
+
+// 세그먼트 체인지가 먼저 발동하고
+// 그담에 서치바 함수가 실행됨

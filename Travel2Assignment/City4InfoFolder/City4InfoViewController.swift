@@ -20,6 +20,13 @@ import Kingfisher
  }
  */
 
+// 별점 은 우짤까.. 흠....
+enum starEnum: String{
+    case harf = "star.leadinghalf.filled"
+    case full = "star.fill"
+    case none = "star"
+}
+
 let travelStruct = TravelInfo()
 
 class City4InfoViewController: UIViewController {
@@ -218,6 +225,10 @@ extension City4InfoViewController {
         
         
         // uiImageView.showsLargeContentViewer = true
+    }
+    
+    func designStarScoew() {
+
     }
 
 }
